@@ -22,6 +22,7 @@
 \newtheorem*{remark}{Remark}
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{definition}{Definition}[subsection]
+\newcommand*{\Definitionautorefname}{Definition}
 \newtheorem{corollary}{Corollary}[subsection]
 \hypersetup{
 	colorlinks=false,      % false: boxed links; true: colored links
@@ -227,7 +228,7 @@
         A \textbf{relation on a set} $A$ is a relation from $A$ to $A$
     \end{definition}
     \begin{example}
-        Let $A$ be the set $\set*{1,2,3,4}$. Which ordered pairs are in the relation $R = \set*{(a,b) \mid a \bdiv b}$?
+        Let $A$ be the set $\set*{1,2,3,4}$. Which ordered pairs are in $the relation $R$ = \set*{(a,b) \mid a \bdiv b}$?
         \begin{figure}[H]
             \centering
             \begin{tabular}{c|c c c c}
@@ -268,7 +269,7 @@
     \end{definition}
     \begin{itemize}
         \item If the relation is symmetric, then \textbf{the matrix is symmetric}. This means that $A = A^T$, and can be seen if the upper and lower triangles are the same.
-        \item If the relation is antisymmetric, then \textbf{the matrix is antisymmetric} (The main diagonal is empty)
+        \item If the matrix is antisymmetric, then it does not necessarily mean that the \textbf{relation} is antisymmetric.
     \end{itemize} 
     \begin{definition}
     \label{def:transitive}
@@ -286,17 +287,88 @@
         \item If there is an $A$ in $R$ that maps to $B$, and for $S$ there is a $B$ that maps to a $C$, then the composite $S \comp R$ will map $A$ to $C$.
         \item If $B$ maps to multiple $C$'s?, then the composite will map $A$ to multiple $C$'s.
     \end{itemize}
-    \begin{definition}
-    \label{def:reflexive powers}
+    \begin{definition} \label{def:reflexive powers}
         Let $R$ be a relation on the set $A$. The powers $R^n$, $n=1,2,3,\dots$ are defined recursively by:
         \begin{equation}
             R^1 = R \quad \text{and} \quad R^{n+1} = R \comp R^n
         \end{equation}
     \end{definition}
-    \begin{definition}
+    \begin{definition} \label{def:transitive theorem}
         The relation $R$ on a set $A$ is \textbf{transitive} if and only if: 
     \begin{equation}
-        \forall n \geq 1, R^n \subseteq R
+        \forall n \geq 1, R^n \subseteq R 
     \end{equation}
     \end{definition}
+    \section{Matrix Representation}
+    Suppose $A = \set*{1,2,3}$ and $B = \set*{1,2}$. Let $\mathrel{R}$ be the relation from $A$ to $B$ containing $(a,b)$ if $a \in A, b \in B$, and $a > b$. The matrix representation of $\mathrel{R}$ if $a_1 = 1, a_2 = 2$, and $a_3 = 3$, and $b_1 = 1$ and $b_2 = 2$ is:
+    \begin{figure}[H]
+        \[ \begin{bmatrix}
+            0 & 0 \\
+            1 & 0 \\
+            1 & 1
+        \end{bmatrix} \] 
+    \end{figure}
+    \begin{itemize}
+        \item The number of rows is the size of $A$. The number of columns is the size of $B$. 
+        \item This is the set: $A \mathrel{R} B = \set*{(2,1), (3,1), (3,2)}$.
+    \end{itemize}
+    Let $a_{ij}$ represent an element in a matrix in the $i$th row and the $j$th column:
+    \begin{figure}[H]
+        \[ A = \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} \\
+            a_{21} & a_{22} & a_{23} \\
+            a_{31} & a_{32} & a_{33}
+        \end{bmatrix} \]
+    \end{figure}
+    \begin{itemize}
+        \item A relation is \textbf{reflexive} if the main diagonal is all 1: $a_{11} = a_{22} = a_{33} = a_{ii}$
+        \item A relation is \textbf{symmetric} if $a_{ij} = a_{ji}$. This implies that $A^T = A$.
+        \item We can figure out if a relation is \textbf{antisymmetric} by using \autoref{def:transitive theorem}. Suppose the relations $R_1$ and $R_2$ are represented by:
+        \[ M_{R_1} = \begin{bmatrix}
+            1 & 0 & 1 \\
+            1 & 1 & 0 \\
+            0 & 0 & 0
+        \end{bmatrix} \text{ and } M_{R_2} = \begin{bmatrix}
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+            1 & 0 & 1
+        \end{bmatrix}\]
+        The composition of these two matrices is the boolean product of them, from \autoref{def:reflexive powers}. Let $M_{R_1} = A$ and $M_{R_2} = B$. Then the composite of $R_1$ and $R_2$ is:
+        \[ A \odot B = \begin{bmatrix}
+            A_{\text{row 1}} \cdot B_{\text{col 1}} & A_{\text{row 1}} \cdot B_{\text{col 2}} & A_{\text{row 1}} \cdot B_{\text{col 3}} \\
+            A_{\text{row 2}} \cdot B_{\text{col 1}} & A_{\text{row 2}} \cdot B_{\text{col 2}} & A_{\text{row 2}} \cdot B_{\text{col 3}} \\
+            A_{\text{row 3}} \cdot B_{\text{col 1}} & A_{\text{row 3}} \cdot B_{\text{col 2}} & A_{\text{row 3}} \cdot B_{\text{col 3}}
+        \end{bmatrix} = \begin{bmatrix}
+            1 & 1 & 1 \\
+            0 & 1 & 1 \\
+            0 & 0 & 0
+        \end{bmatrix} \] 
+        If $R_1$ is contained in $R_2$, then $R_1$ is antisymmetric.
+    \end{itemize}
+    % Read this part and understand. Confused on what in the fuck is happening here
+
+    We can represent relations as directed graphs. The following is a directed graph with verticies $a, b, c,$ and $d$, and edges $(a,b), (a,d), (b,b), (b,d), (c,a), (c,b),$ and $(d,b)$:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \node (a) at (0,0) {$a$};
+            \node (b) at (2,0) {$b$};
+            \node (c) at (0,-2) {$c$};
+            \node (d) at (2,-2) {$d$};
+            \draw[->] (a) to (b);
+            \draw[->] (a) to (d);
+            \draw[->] (b) to [out=0,in=-270,looseness=5] (b);
+            \draw[->] (b) to (d);
+            \draw[->] (c) to (a);
+            \draw[->] (c) to (b);
+            \draw[->] (d) to (b);
+        \end{tikzpicture}
+    \end{figure}
+    % Figure out how to make this look better. For the bidirectional edges, I want to make it curved. Arrows in the middle. Also, for the loop, how to make it more circular.
+    \begin{itemize}
+        \item \textbf{Reflexive} if there is a loop on every vertex. 
+        \item \textbf{Symmetric} if every edge is bidirectional.
+    \end{itemize}
+        
 \end{document}
+ 
