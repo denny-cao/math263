@@ -188,13 +188,28 @@
     \end{itemize}
 
     \begin{example}
-        Let $A = \set*{0,1,2}$ and $B=\set*{a,b}$. Then $\set*{(0,a),(0,b),(1,a),(2,b)}$ is a relation from $A$ to $B$. This means, for instance, that $0Ra$, but that $1 \not R b$ Relations can be represented graphically. Another way is to use a table:
-        \begin{figure}
+        Let $A = \set*{0,1,2}$ and $B=\set*{a,b}$. Then $\set*{(0,a),(0,b),(1,a),(2,b)}$ is a relation from $A$ to $B$. This means, for instance, that $0 \mathrel{R} a$, but that $1 \not \mathrel{R} b$. Relations can be represented graphically:
+        \begin{figure}[H]
             \centering
             \begin{tikzpicture}
+                [scale=.9,auto=center,every node/.style={circle,fill=blue!20}]
+                \node (a0) at (0,0) {0};
+                \node (a1) at (0,1) {1};  
+                \node (a2) at (0,2) {2}; 
 
+                \node (aA) at (6,2) {a};  
+                \node (aB) at (6,1) {b};  
+
+                
+                \draw (a0) -- (aA);
+                \draw (a0) -- (aB);
+                \draw (a1) -- (aA);
+                \draw (a2) -- (aB);
             \end{tikzpicture}
+            \caption{A relation from $A$ to $B$}
+            \label{fig:relation}
         \end{figure}
+        Another way is to use a table:
         \begin{figure}[H]
             \centering
             \begin{tabular}{c|c c}
@@ -204,6 +219,8 @@
                 1 & 1 & 0 \\
                 2 & 0 & 1 \\
             \end{tabular}
+            \caption{A relation from $A$ to $B$}
+            \label{fig:relation table}
         \end{figure}
     \end{example}
     \begin{definition}
