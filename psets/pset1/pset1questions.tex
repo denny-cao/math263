@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}  
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{latexsym, color}
+\usepackage[all, arc, poly ]{xy}
+\voffset=-.8cm
+\hoffset=-2.0cm
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{15.6cm}
+\pagestyle{myheadings}
+\newtheorem{q} {Q}
+\newtheorem{dfntn}{Definition}
+\newcommand{\df}{\displaystyle\frac}
+\newcommand{\eqq}{\end{q}\newpage}
+\newcommand{\beq}{\begin{q}\hskip-.2cm) }
+\markright {Dr. Petrescu MATH263 Practice Exam 1 \hfill Justify all your answers\hfill}
+\begin{document}
+{\bf Show all your work. No essays, be concise}  \vskip0.2cm 
+{\bf Name}: \rule{8cm}{.01cm}\hspace*{0.2cm} {\bf Due Date}: \underline{01/24} \vskip.5cm
+%%%questions
+Let $R=R: A \rightarrow A$ be a relation from a set $A$ to itself then, $$R^n=\overbrace{R_oR_o\ldots R_oR}^\text{n}$$\\that is, $R^n$ is the composition of $R$ with itself $n$ times.
+\beq Give a counter example or prove  the following assertions:\\ a. if  $R$ is  reflexive then  $R^n$ is reflexive.\\ b. if  $R$ is  symmetric  then $R^n$ is symmetric. \\ c. if  $R$ is  transitive  then $R^n$ is transitive.\eqq
+\beq Suppose that $R$ and $S$ are reflexive relations on a set $A$. Prove or disprove each of these statements.\\ a) $R\cup S$ is reflexive.\\ b) $R\cap S$ is reflexive. \\c) $R\oplus S$ is irreflexive.\\d) $R - S$ is irreflexive.\\ e) $S_oR$ ($S$ composed with $R$) is reflexive.  \eqq
+\beq Find the matrix that represents the  relation $R$ on $\{1,2,3,4,6,12\}$, where $aRb$ means $a | b$. Use elements in the order given to determine rows and columns of the matrix.  % M above shows you how to write a matrix with LaTeX.
+ \eqq
+\beq Draw the directed graph for the relation defined by the matrix: $$ M=\left( \begin{array}{cccc}1 & 0 & 1 & 0\\0 & 1 &0 & 1\\1 & 0 & 1 &0 \\ 0 & 1 & 0 & 1\end{array} \right) $$ Example of a digraph:\[\fbox{\xygraph{ !{<0cm,0cm>;<1.5cm,0cm>:<0cm,1.2cm>::} !{(0,0) }*+{\bullet_{a}}="a"
+!{(3,0) }*+{\bullet_{b}}="b" !{(0,2) }*+{\bullet_{c}}="c" !{(3,2)}*+{\bullet_{d}}="d" "a":"b" "a":"d" "b":"c" "a" :@(lu,ld) "a""b" :@(r,ld) "b""c" :@(ld,lu) "c" "c":"d" "d":@/_.4cm/"c"} }\]%change the : to - in the xy graph to see what happens. l means left and r means right, u means up and d means down. You can search for xygraphs tutorials on the web
+ \eqq
+\beq A Lemma in the book states: {\em Let $A$ be a set with $n$ elements, and let $R$ be a relation on $A$. If there is a path of length at least one in $R$ from $a$ to $b$, then there is such a path with length not exceeding $n$. Moreover, when $a \neq b$, if there is a path of length at least one in R from a to b, then there is such a path with length not exceeding $n-1$}. The book proves for the case that $a=b$. Find the proof for the case that $a \neq b$\eqq
+\begin{q}{\label{question}} Draw the directed graph that represents the relation $ARA=\{( a, a), ( a, b), ( b, c), ( c, b), ( c, d), ( d, a), ( d, b)\} $ where $A=\{a, b,c,d,e\} $.\eqq
+\begin{q} Find the matrix of the relation of $ARA$  from question {\ref{question}} above.\eqq
+\begin{q} From the directed graph of  question {\ref{question}} above draw the digraph of $\bar{R}$ (the complement of $R$).\eqq
+\begin{q} Find the matrix of the relation of $A{\bar R}A$  from question {\ref{question}} above.\eqq
+\begin{q} From the directed graph of question {\ref{question}} above draw the digraph of $R^{-1}$ (the inverse of $R$).\eqq
+\begin{q} Find the matrix of the relation of $AR^{-1}A$  from question {\ref{question}} above.\eqq
+\begin{q} In $ARA$ from question {\ref{question}} above remove or add the least amount of  elements so that $ARA$ represents an equivalence relation.\eqq
+ %%%questions
+\end{document}

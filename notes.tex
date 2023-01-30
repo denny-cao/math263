@@ -18,10 +18,10 @@
 \usetikzlibrary{scopes}
 % \usepackage{xcolor} \pagecolor[rgb]{0.12549019607,0.1294117647,0.13725490196} \color[rgb]{0.82352941176,0.76862745098,0.62745098039} % dark theme
 \theoremstyle{definition}
-\newtheorem{example}{Example}[subsection]
+\newtheorem{example}{Example}
 \newtheorem*{remark}{Remark}
 \newtheorem{theorem}{Theorem}[subsection]
-\newtheorem{definition}{Definition}[subsection]
+\newtheorem{definition}{Definition}
 \newcommand*{\Definitionautorefname}{Definition}
 \newtheorem{corollary}{Corollary}[subsection]
 \hypersetup{
@@ -34,6 +34,7 @@
 \usepackage{physics}
 \usepackage{siunitx}
 \usepackage{tikz,pgfplots}
+\usepackage{subcaption} % subfigures
 \usepackage[outline]{contour} % glow around text
 \usetikzlibrary{calc}
 \usetikzlibrary{angles,quotes} % for pic
@@ -133,6 +134,9 @@
 \newcommand\perm[2][^n]{\prescript{#1\mkern-2.5mu}{}P_{#2}}
 \newcommand\comb[2][^n]{\prescript{#1\mkern-0.5mu}{}C_{#2}}
 
+% Relations
+\newcommand{\rel}{\mathrel{R}} % relation
+
 \setlength\parindent{0pt}
 
 % Sign Charts
@@ -171,26 +175,33 @@
     \pagebreak
     \tableofcontents
     \pagebreak
-
+    \setcounter{section}{8}
     \section{Relations}
-    \subsection{Introduction}
-    \subsubsection{Cartesian Products}
-    \begin{definition}
-    \label{def:cartesian product}
-        Let $A$ and $B$ be sets. The \textbf{cartesian product} of $A$ and $B$ is the set
-        \begin{equation}
-            A \times B = \set*{(a, b) \mid a \in A \land b \in B}
-        \end{equation}
+    \subsection{Relations and Their Properties}
+    \subsubsection{Introduction}
+    \begin{definition}\label{def:cartesian product}
+            Let $A$ and $B$ be sets. The \textbf{cartesian product} of $A$ and $B$ is the set
+                \[ A \times B = \set*{(a, b) \mid a \in A \land b \in B} \]
+        \end{definition}
+        \begin{itemize}
+            \item $A \times B \neq B \times A$
+            \item Every function is a relation, but not every relation is a function. When it is a function, it is one-to-one.
+        \end{itemize}
+    
+    \begin{definition}\label{def:binary relation}
+        Let $A$ and $B$ be sets. A \textbf{binary relation from $A$ to $B$} is a subset of $A \times B$.
     \end{definition}
     \begin{itemize}
-        \item $A \times B \neq B \times A$
-        \item Recall there are $2^{|S|}$ subsets of $S$. These are the amount of relations from $A$ to $B$ (A subset of the cartesian product is a relation). Remember that this includes $\emptyset$.
-        \item Every function is a relation, but not every relation is a function. When it is a function, it is one-to-one.
-    \end{itemize}
+        \item A binary relation from $A$ to $B$ is a set $R$ of ordered pairs. First element is from $A$, second element is from $B$.
+        \item We use notation $a \rel b$ to denote $(a, b) \in R$.
+        \item We use notation $a \not \rel b$ to denote $(a, b) \not \in R$.
+        \item When $(a,b)$ belongs to $R$, $a$ is \textbf{related to} $b$.
+        \item Recall there are $2^{|S|}$ subsets of $S$. These are the amount of relations from $A$ to $B$. Remember that this includes $\emptyset$.
 
+    \end{itemize}
     \begin{example}
         Let $A = \set*{0,1,2}$ and $B=\set*{a,b}$. Then $\set*{(0,a),(0,b),(1,a),(2,b)}$ is a relation from $A$ to $B$. This means, for instance, that $0 \mathrel{R} a$, but that $1 \not \mathrel{R} b$. Relations can be represented graphically:
-        \begin{figure}[H]
+        \begin{figure}[H]\label{fig:relation}
             \centering
             \begin{tikzpicture}
                 [scale=.9,auto=center,every node/.style={circle,fill=blue!20}]
@@ -198,8 +209,8 @@
                 \node (a1) at (0,1) {1};  
                 \node (a2) at (0,2) {2}; 
 
-                \node (aA) at (6,2) {a};  
-                \node (aB) at (6,1) {b};  
+                \node (aA) at (4,2) {a};  
+                \node (aB) at (4,1) {b};  
 
                 
                 \draw (a0) -- (aA);
@@ -208,31 +219,32 @@
                 \draw (a2) -- (aB);
             \end{tikzpicture}
             \caption{A relation from $A$ to $B$}
-            \label{fig:relation}
         \end{figure}
         Another way is to use a table:
-        \begin{figure}[H]
+        \begin{figure}[H]\label{fig:relation table}
+
             \centering
-            \begin{tabular}{c|c c}
-                R & a & b \\
+            \begin{tabular}{c|c c} 
+                $\rel$ & $a$ & $b$ \\
                 \hline
                 0 & 1 & 1 \\
                 1 & 1 & 0 \\
                 2 & 0 & 1 \\
             \end{tabular}
             \caption{A relation from $A$ to $B$}
-            \label{fig:relation table}
         \end{figure}
     \end{example}
+    \setcounter{subsubsection}{2}
+    \subsubsection{Relations on a Set}
     \begin{definition}
         A \textbf{relation on a set} $A$ is a relation from $A$ to $A$
     \end{definition}
     \begin{example}
-        Let $A$ be the set $\set*{1,2,3,4}$. Which ordered pairs are in $the relation $R$ = \set*{(a,b) \mid a \bdiv b}$?
+        Let $A$ be the set $\set*{1,2,3,4}$. Which ordered pairs are in the relation $R = \set*{(a,b) \mid a \bdiv b}$?
         \begin{figure}[H]
             \centering
             \begin{tabular}{c|c c c c}
-                R & 1 & 2 & 3 & 4 \\
+                $R$ & 1 & 2 & 3 & 4 \\
                 \hline
                 1 & 1 & 1 & 1 & 1 \\
                 2 & 0 & 1 & 0 & 1 \\
@@ -245,27 +257,19 @@
             \item Note that this can be a matrix!
         \end{itemize}
     \end{example}
-    \subsection{Properties of Relations}
-    \begin{definition}
-    \label{def:reflexive}
+    \subsubsection{Properties of Relations}
+    \begin{definition}\label{def:reflexive}
         A relation $R$ on a set $A$ is called \textbf{reflexive} if
-        \begin{equation}
-            \forall a \in A, (a,a) \in R
-        \end{equation}
+            \[ \forall a \in A((a,a) \in R) \]
     \end{definition}
     \begin{itemize}
         \item If the relation is reflexive, then \textbf{the main diagonal of the matrix is full}
     \end{itemize}
-    \begin{definition}
-    \label{def:symmetric and antisymmetric}
+    \begin{definition}\label{def:symmetric and antisymmetric}
         A relation $R$ on a set $A$ is called \textbf{symmetric} if:
-        \begin{equation}
-            \forall a \forall b \in A, (a,b) \in R \implies (b,a) \in R
-        \end{equation}
+            \[ \forall a \forall b \in A((a,b) \in R \rightarrow (b,a) \in R) \]
         A relation $R$ on a set $A$ is called \textbf{antisymmetric} if:
-        \begin{equation}
-            \forall a \forall b \in A, (a,b) \in R \implies (b,a) \in R
-        \end{equation}
+            \[ \forall a \forall b \in A((a,b) \in R \land (b,a) \in R \rightarrow (a=b)) \]
     \end{definition}
     \begin{itemize}
         \item If the relation is symmetric, then \textbf{the matrix is symmetric}. This means that $A = A^T$, and can be seen if the upper and lower triangles are the same.
@@ -274,11 +278,54 @@
     \begin{definition}
     \label{def:transitive}
         A relation $R$ on a set $A$ is called \textbf{transitive} if:
-         \begin{equation}
-            \forall a \forall b \forall c \in A, (a,b) \in R \land (b,c) \in R \implies (a,c) \in R.
-         \end{equation}
+            \[ \forall a \forall b \forall c \in A((a,b) \in R \land (b,c) \in R \implies (a,c) \in R) \]
     \end{definition}
-    \subsection{Combining Relations}
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}{.25\textwidth}
+            \centering
+            \[ \begin{bmatrix}
+               1 & & & & & & \\
+               & 1 & & & & & \\
+               & & 1 & & & & \\
+               & & & 1 & & & \\
+               & & & & 1 & & \\
+               & & & & & 1 & \\
+               & & & & & & 1 \\
+               \end{bmatrix} \] 
+        \caption{Reflexive}
+        \end{subfigure}
+    \newcommand\tikznode[2]{\tikz[remember picture,baseline=(#1.base)]{\node(#1)[inner sep=0pt]{#2};}}
+    \begin{subfigure}{.25\textwidth}
+        \centering
+        \[ \begin{bmatrix}
+            \tikznode{d1}{} & & & & \tikznode{a}{1} &   \\
+            & & & & & & &  \\
+            & & & & & & \tikznode{c}{0} &   \\
+            & & & & & & &  \\
+            \tikznode{b}{1} & & & & & &   \\
+            & & & & & & & \\
+            & & \tikznode{d}{0} & & & & &  \tikznode{d2}{} \\
+        \end{bmatrix} \]
+        \tikz[overlay,remember picture]{\draw[-, myred](a)--(b); \draw[-, myred](c)--(d); \draw[-](d1)--(d2);}
+        \caption{Symmetric}
+    \end{subfigure}
+    \begin{subfigure}{.25\textwidth}
+        \centering
+        \[ \begin{bmatrix}
+            \tikznode{d1}{} & & & & \tikznode{a}{1} &   \\
+             & & & & &\tikznode{e}{1} &   \\
+            & & & & & & \tikznode{c}{0} &   \\
+            & & & & & & &  \\
+            \tikznode{b}{0} & & & & & &   \\
+            & \tikznode{f}{0} & & & & &  \\
+            & & \tikznode{d}{1} & & & & &  \tikznode{d2}{} \\
+        \end{bmatrix} \]
+        \tikz[overlay,remember picture]{\draw[-, myred](a)--(b); \draw[-, myred](c)--(d); \draw[-, myred](e)--(f); \draw[-](d1)--(d2);}
+        \caption{Antisymmetric}
+    \end{subfigure}
+    \end{figure}
+    \subsubsection{Combining Relations}
     Similar to composing functions. We can combine relations in any way two sets can be combined. You can do everything you can do with sets. 
     \begin{definition}
         Let $R$ be a relation from a set $A$ to a set $B$ and $S$ a relation from $B$ to a set $C$. The \textbf{composite} of $R$ and $S$ is the relation consisting of ordered pairs $(a,c)$, where $a \in A, c \in C$, and for which $\exists b \in B \mid (a,b) \in R \land (b,c) \in S$. We denote the composite of $R$ and $S$ by $S \comp R$.
@@ -287,19 +334,27 @@
         \item If there is an $A$ in $R$ that maps to $B$, and for $S$ there is a $B$ that maps to a $C$, then the composite $S \comp R$ will map $A$ to $C$.
         \item If $B$ maps to multiple $C$'s?, then the composite will map $A$ to multiple $C$'s.
     \end{itemize}
-    \begin{definition} \label{def:reflexive powers}
+    \begin{definition}\label{def:reflexive powers}
         Let $R$ be a relation on the set $A$. The powers $R^n$, $n=1,2,3,\dots$ are defined recursively by:
-        \begin{equation}
-            R^1 = R \quad \text{and} \quad R^{n+1} = R \comp R^n
-        \end{equation}
+            \[ R^1 = R \quad \text{and} \quad R^{n+1} = R \comp R^n \]
     \end{definition}
-    \begin{definition} \label{def:transitive theorem}
+    \begin{definition}\label{def:transitive theorem}
         The relation $R$ on a set $A$ is \textbf{transitive} if and only if: 
-    \begin{equation}
-        \forall n \geq 1, R^n \subseteq R 
-    \end{equation}
+        \[ \forall n \geq 1, R^n \subseteq R \]
     \end{definition}
-    \section{Matrix Representation}
+    \subsection{$n$-ary Relations and Their Applications}
+    \setcounter{definition}{0}
+    \setcounter{example}{0}
+    \subsubsection{$n$-ary Relations}
+    \begin{definition}\label{def:nary}
+        Let $A_1, A_2, \dots, A_n$ be sets. An \textbf{$n$-ary relation} is a subset of $A_1 \times A_2 \times \dots \times A_n$. The sets $A_1, A_2, \dots, A_n$ are called the \textbf{domains} of the relation, and $n$ is called its degree.
+    \end{definition}
+    \begin{example}
+        Let $R$ be the relation consisting of 4-tuples $(A, N, S, D, T)$ representing airplane flights, where $A$ is the airline, $N$ is the flight number, $S$ is the starting point, $D$ is the destination, and $T$ is the departure time. The degree of this relation is 5, and its domains are the set of airlines, the set of flight numbers, the set of cities, the set of cities (again), and the set of times. 
+    \end{example}
+    \subsubsection{Databases and Relations}
+    
+    \subsubsection{Matrix Representation}
     Suppose $A = \set*{1,2,3}$ and $B = \set*{1,2}$. Let $\mathrel{R}$ be the relation from $A$ to $B$ containing $(a,b)$ if $a \in A, b \in B$, and $a > b$. The matrix representation of $\mathrel{R}$ if $a_1 = 1, a_2 = 2$, and $a_3 = 3$, and $b_1 = 1$ and $b_2 = 2$ is:
     \begin{figure}[H]
         \[ \begin{bmatrix}
