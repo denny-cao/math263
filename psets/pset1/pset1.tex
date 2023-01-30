@@ -130,6 +130,11 @@
 \newcommand{\rel}{\mathcal{R}} % relation
 \setlength\parindent{0pt}
 
+% Directed Graphs
+\usetikzlibrary{arrows}
+\tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}}
+\tikzset{edge/.style = {->,> = latex'}}
+
 % Sign Charts
 \newdimen\tcolw \tcolw=2.5em % the column width
 \edef\ecatcode{\catcode`&=\the\catcode`&\relax}\catcode`&=4
@@ -203,6 +208,33 @@
         0 & 1 & 0 & 1 \\
     \end{bmatrix} \]
     \subsection*{Solution}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            % Vertices
+            \node[vertex] (a) at (0,0) {$a$};
+            \node[vertex] (b) at (4,0) {$b$};
+            \node[vertex] (c) at (0,-4) {$c$};
+            \node[vertex] (d) at (4,-4) {$d$};
+
+            % Edges
+            % a
+            \draw[edge] (a) to[loop above] (a);
+            \draw[edge] (a) to[bend left] (c);
+
+            % b 
+            \draw[edge] (b) to[loop above] (b);
+            \draw[edge] (b) to[bend left] (d);
+
+            % c
+            \draw[edge] (c) to[bend left] (a);
+            \draw[edge] (c) to[loop below] (c);
+
+            % d 
+            \draw[edge] (d) to[bend left] (b);
+            \draw[edge] (d) to[loop below] (d);
+        \end{tikzpicture}
+    \end{figure}
     \pagebreak
     \section*{Problem 5}
     A Lemma in the book states: {\em Let $A$ be a set with $n$ elements, and let $R$ be a relation on $A$. If there is a path of length at least one in $R$ from $a$ to $b$, then there is such a path with length not exceeding $n$. Moreover, when $a \neq b$, if there is a path of length at least one in R from a to b, then there is such a path with length not exceeding $n-1$}. The book proves for the case that $a=b$. Find the proof for the case that $a \neq b$.
@@ -213,20 +245,109 @@
     \[ A \rel A=\{( a, a), ( a, b), ( b, c), ( c, b), ( c, d), ( d, a), ( d, b)\} \]
     where $A=\{a, b,c,d,e\}$
     \subsection*{Solution}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            % Vertices
+            \node[vertex] (a) at (0,0) {$a$};
+            \node[vertex] (b) at (4,0) {$b$};
+            \node[vertex] (c) at (4,-4) {$c$};
+            \node[vertex] (d) at (0,-4) {$d$};
+            \node[vertex] (e) at (2,-5) {$e$};
+
+            % Edges
+            % a
+            \draw[edge] (a) to[loop above] (a);
+            \draw[edge] (a) to (b);
+            
+            % b
+            \draw[edge] (b) to[bend left] (c);
+
+            % c
+            \draw[edge] (c) to[bend left] (b);
+            \draw[edge] (c) to (d);
+
+            % d
+            \draw[edge] (d) to (a);
+            \draw[edge] (d) to (b);
+        \end{tikzpicture}
+    \end{figure}
     \pagebreak
     \section*{Problem 7}
     Find the matrix of the relation of $A \rel A$  from \hyperref[question]{Question 6} above.
     \subsection*{Solution}
+    \[ M = \begin{bmatrix}
+        1 & 0 & 0 & 1 & 0 \\
+        1 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0 & 0 \\ 
+        0 & 0 & 0 & 0 & 0 \\
+    \end{bmatrix} \]
     \pagebreak
     \section*{Problem 8}
+    From the directed graph of  question \hyperref[question]{Question 6} above draw the digraph of $\bar{R}$ (the complement of $R$).
+    \subsection*{Solution}
+    \[ \overline{M} = \begin{bmatrix}
+        0 & 1 & 1 & 0 & 1 \\
+        0 & 1 & 0 & 0 & 1 \\
+        1 & 0 & 1 & 1 & 1 \\
+        1 & 1 & 0 & 1 & 1 \\
+        1 & 1 & 1 & 1 & 1 \\
+    \end{bmatrix} \]
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            % Vertices
+            \node[vertex] (a) at (0,0) {$a$};
+            \node[vertex] (b) at (4,0) {$b$};
+            \node[vertex] (c) at (0,-4) {$c$};
+            \node[vertex] (d) at (4,-4) {$d$};
+            \node[vertex] (e) at (2,-2) {$e$};
+
+            % Edges
+            % a
+            \draw[edge] (a) to (b);
+            \draw[edge] (a) to[bend left] (c);
+            \draw[edge] (a) to[bend left] (e);
+
+            % b
+            \draw[edge] (b) to[loop above] (b);
+            \draw[edge] (b) to[bend left] (e);
+
+            % c
+            \draw[edge] (c) to[bend left] (a);
+            \draw[edge] (c) to[loop below] (c);
+            \draw[edge] (c) to (d);
+            \draw[edge] (c) to[bend left] (e);
+
+            % d
+            \draw[edge] (d) to (a);
+            \draw[edge] (d) to (b);
+            \draw[edge] (d) to[loop below] (d);
+            \draw[edge] (d) to[bend left] (e);
+
+            % e
+            \draw[edge] (e) to[bend left] (a);
+            \draw[edge] (e) to[bend left] (b);
+            \draw[edge] (e) to[bend left] (c);
+            \draw[edge] (e) to[bend left] (d);
+            \draw[edge] (e) to[loop below] (e);
+        \end{tikzpicture}
+    \end{figure}
+    \pagebreak
+    \section*{Problem 9}
     From the directed graph of question \hyperref[question]{Question 6} above draw the digraph of $R^{-1}$ (the inverse of $R$).
     \subsection*{Solution}
     \pagebreak
-    \section*{Problem 9}
+    \section*{Problem 10}
+    Find the matrix of the relation of $A{\bar R}A$  from question \hyperref[question]{Question 6} above.
+    \subsection*{Solution}
+    \pagebreak
+    \section*{Problem 11}
     Find the matrix of the relation of $A \rel^{-1}A$ from question \hyperref[question]{Question 6} above.
     \subsection*{Solution}
     \pagebreak
-    \section*{Problem 10}
+    \section*{Problem 12}
     In $A \rel A$ from question \hyperref[question]{Question 6} above remove or add the least amount of  elements so that $A \rel A$ represents an equivalence relation.
     \subsection*{Solution}
 \end{document}

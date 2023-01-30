@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1675051197 "/home/akkaro/math263/psets/pset1/pset1.tex" "pset1.pdf" "pset1" 1675051199
-  "/home/akkaro/math263/psets/pset1/pset1.tex" 1675051197 9226 e056d5895d7c8ffe756364c6272f967a ""
+["pdflatex"] 1675053613 "/home/akkaro/math263/psets/pset1/pset1.tex" "pset1.pdf" "pset1" 1675053615
+  "/home/akkaro/math263/psets/pset1/pset1.tex" 1675053613 12972 2f50c570d65309446852d817775746e7 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc" 1388795362 7013 c55cc8669071ac14036c4a0c96c16202 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -65,6 +65,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex" 1601326656 21989 fdc867d05d228316de137a9fc5ec3bbe ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex" 1601326656 8893 e851de2175338fdf7c17f3e091d94618 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex" 1601326656 3614 3404a408629b6c0bbcaf4731a9871bf8 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex" 1601326656 319 225dfe354ba678ff3c194968db39d447 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex" 1601326656 15929 463535aa2c4268fead6674a75c0e8266 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex" 1601326656 5493 23e371e6fe3e7e42533d6d6c15662e0d ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex" 1601326656 321 cdd11262840e01e25374a2d458f15e99 ""
@@ -76,6 +77,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1621110968 186007 6e7dfe0bd57520fd5f91641aa72dcac8 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex" 1601326656 8843 5533436db3e30fbad1e0440db6027dac ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex" 1601326656 7474 f05a7223b140f230922562ac6a9fede5 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex" 1601326656 31874 89148c383c49d4c72114a76fd0062299 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex" 1601326656 58801 1e750fb0692eb99aaac45698bbec96b1 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex" 1608933718 85938 8e4ba97c5906e1c0d158aea81fe29af7 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex" 1601326656 32995 ac577023e12c0e4bd8aa420b2e852d1a ""
@@ -240,9 +242,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1666161220 4595883 1a8137d784f6ac4a90cecb4bdd05a7cf ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1666161259 3058865 e4f58d72146e9845b97136b6e6ac75ce ""
   "/usr/local/texlive/2022/texmf.cnf" 1666161215 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "pset1.aux" 1675051199 608 04e6a6bad037145d6ab4044450139d44 "pdflatex"
+  "pset1.aux" 1675053615 608 6776d13a5a070ce4f771059e30cf87c2 "pdflatex"
   "pset1.out" 0 -1 0 "pdflatex"
-  "pset1.tex" 1675051197 9226 e056d5895d7c8ffe756364c6272f967a ""
+  "pset1.tex" 1675053613 12972 2f50c570d65309446852d817775746e7 ""
   (generated)
   "pset1.aux"
   "pset1.log"

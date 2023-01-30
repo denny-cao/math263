@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  29 JAN 2023 22:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  29 JAN 2023 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -784,10 +784,15 @@ Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks51
 \verbatim@line=\toks52
 \verbatim@in@stream=\read3
-)
-\tcolw=\dimen324
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 164.
-LaTeX Font Info:    Trying to load font information for T1+stix on input line 164.
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+ (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\arrowsize=\dimen324
+))
+\tcolw=\dimen325
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 169.
+LaTeX Font Info:    Trying to load font information for T1+stix on input line 169.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/t1stix.fd
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 )
@@ -798,48 +803,48 @@ LaTeX Warning: Unused global option(s):
 (./pset1.aux)
 \openout1 = `pset1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 164.
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 164.
-LaTeX Font Info:    Trying to load font information for LS1+stix on input line 164.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 169.
+LaTeX Font Info:    Trying to load font information for LS1+stix on input line 169.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 164.
-LaTeX Font Info:    Trying to load font information for LS2+stix on input line 164.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 169.
+LaTeX Font Info:    Trying to load font information for LS2+stix on input line 169.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 164.
-LaTeX Info: Command `\dddot' is already robust on input line 164.
-LaTeX Info: Command `\ddddot' is already robust on input line 164.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Info: Command `\dddot' is already robust on input line 169.
+LaTeX Info: Command `\ddddot' is already robust on input line 169.
  (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count344
-\scratchdimen=\dimen325
+\scratchdimen=\dimen326
 \scratchbox=\box83
 \nofMPsegments=\count345
 \nofMParguments=\count346
 \everyMPshowfont=\toks53
 \MPscratchCnt=\count347
-\MPscratchDim=\dimen326
+\MPscratchDim=\dimen327
 \MPnumerator=\count348
 \makeMPintoPDFobject=\count349
 \everyMPtoPDFconversion=\toks54
@@ -883,7 +888,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 164.
+Package hyperref Info: Link coloring OFF on input line 169.
 (./pset1.out) (./pset1.out)
 \@outlinefile=\write4
 \openout4 = `pset1.out'.
@@ -905,51 +910,51 @@ Package siunitx Warning: Detected the "physics" package:
 (/usr/local/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 164.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 169.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 164.
+ on input line 169.
 
-LaTeX Font Info:    Trying to load font information for LS1+stixscr on input line 165.
+LaTeX Font Info:    Trying to load font information for LS1+stixscr on input line 170.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stixex on input line 165.
+LaTeX Font Info:    Trying to load font information for LS2+stixex on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 165.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 165.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input line 165.
+LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+stixbb on input line 165.
+LaTeX Font Info:    Trying to load font information for LS1+stixbb on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stixcal on input line 165.
+LaTeX Font Info:    Trying to load font information for LS2+stixcal on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+stixsf on input line 165.
+LaTeX Font Info:    Trying to load font information for LS1+stixsf on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stixtt on input line 165.
+LaTeX Font Info:    Trying to load font information for LS2+stixtt on input line 170.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/stix/ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 171--175
+Underfull \hbox (badness 10000) in paragraph at lines 176--180
 
  []
 
@@ -1032,23 +1037,39 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11] (./pset1.aux)
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13] (./pset1.aux)
 Package rerunfilecheck Info: File `pset1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41346 strings out of 475071
- 947421 string characters out of 5778915
- 1339185 words of memory out of 5000000
- 62098 multiletter control sequences out of 15000+600000
+ 42041 strings out of 475071
+ 965499 string characters out of 5778915
+ 1343185 words of memory out of 5000000
+ 62778 multiletter control sequences out of 15000+600000
  532659 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,89p,782b,883s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on pset1.pdf (11 pages, 167439 bytes).
+Output written on pset1.pdf (13 pages, 173032 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
+ 49 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
