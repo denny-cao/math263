@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.12)  2 FEB 2023 11:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.1.12)  5 FEB 2023 19:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -996,6 +996,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
+Overfull \hbox (13.17511pt too wide) in paragraph at lines 425--426
+[]\T1/stix/m/n/12 To be re-flex-ive, there must be a re-la-tion from each el-e-ment to it-self. There-fore, $\LS1/stix/m/n/12 .\LS1/stix/m/it/12 b; b\LS1/stix/m/n/12 /\LS1/stix/m/it/12 ; \LS1/stix/m/n/12 .\LS1/stix/m/it/12 c; c\LS1/stix/m/n/12 /\LS1/stix/m/it/12 ; \LS1/stix/m/n/12 .\LS1/stix/m/it/12 d; d\LS1/stix/m/n/12 /\LS1/stix/m/it/12 ; \LS1/stix/m/n/12 .\LS1/stix/m/it/12 e; e\LS1/stix/m/n/12 /$
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+stix on input line 429.
+(/usr/share/texlive/texmf-dist/tex/latex/stix/ts1stix.fd
+File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1008,18 +1016,18 @@ Package rerunfilecheck Info: File `pset1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41738 strings out of 478287
- 953492 string characters out of 5849289
- 1288045 words of memory out of 5000000
- 59292 multiletter control sequences out of 15000+600000
- 529930 words of font info for 120 fonts, out of 8000000 for 9000
+ 41765 strings out of 478287
+ 953974 string characters out of 5849289
+ 1289045 words of memory out of 5000000
+ 59315 multiletter control sequences out of 15000+600000
+ 530261 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,89p,782b,779s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on pset1.pdf (9 pages, 171330 bytes).
+ 84i,12n,89p,782b,768s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathcal.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathscr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stix/stix-mathsf.pfb>
+Output written on pset1.pdf (9 pages, 175371 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 123 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  23 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

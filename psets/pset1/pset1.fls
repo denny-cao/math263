@@ -1294,9 +1294,15 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stix/stix-mathtt.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stix/stix-mathtt.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stix/stix-mathtt.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stix/t1-stixgeneral-italic.tfm
+INPUT /usr/share/texlive/texmf-dist/tex/latex/stix/ts1stix.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/stix/ts1stix.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/stix/ts1stix.fd
+INPUT /usr/share/texlive/texmf-dist/tex/latex/stix/ts1stix.fd
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/stix/ts1-stixgeneral.tfm
 INPUT pset1.aux
 INPUT ./pset1.out
 INPUT ./pset1.out
+INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb

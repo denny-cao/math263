@@ -1,8 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1675353917 "/home/akkaro/math263/psets/pset1/pset1.tex" "pset1.pdf" "pset1" 1675353919
+["pdflatex"] 1675643066 "/home/akkaro/math263/psets/pset1/pset1.tex" "pset1.pdf" "pset1" 1675643070
   "/etc/texmf/web2c/texmf.cnf" 1673563039 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/akkaro/math263/psets/pset1/pset1.tex" 1675353916 14348 2feef0f0ac622d45084812adf32e1d46 ""
+  "/home/akkaro/math263/psets/pset1/pset1.tex" 1675643065 16455 a51bd2d6a14c46d8425397d8af003d13 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc" 1388795362 7013 c55cc8669071ac14036c4a0c96c16202 ""
+  "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc" 1388795362 2836 154e6b0061f9b8cb549144b55b268339 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -24,6 +25,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/stix/t1-stixgeneral-bold.tfm" 1388795362 11012 fe8465b2dc4812fb0ce069fcb0fe6af8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/stix/t1-stixgeneral-italic.tfm" 1388795362 11156 e8d76832153748248385d623691129d7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/stix/t1-stixgeneral.tfm" 1388795362 11184 42ce9dfc058df87da7094b2e2fab1260 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/stix/ts1-stixgeneral.tfm" 1388795362 1420 a3fb73e1fffd188e53dd5a0b1edb271e ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.pfb" 1388795362 250376 86937501504e07e9745bc88e006094b2 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb" 1388795362 221139 7b7742dd20e0010cb85b7f92956bac16 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Regular.pfb" 1388795362 547522 a9135ac84940b576091fbefc78a79500 ""
@@ -229,6 +231,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stixtt.fd" 1525875814 1650 17f864699a46f12cf4c2bb97bd4c7768 ""
   "/usr/share/texlive/texmf-dist/tex/latex/stix/stix.sty" 1525197016 127754 a11e838621b2e6d75941a1980aaa80ac ""
   "/usr/share/texlive/texmf-dist/tex/latex/stix/t1stix.fd" 1525875814 2214 8c074e05c4ef5af520f739918e222af4 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/stix/ts1stix.fd" 1525875814 2227 3023591354ba6ccf3a61923e27246aae ""
   "/usr/share/texlive/texmf-dist/tex/latex/tabu/tabu.sty" 1644012269 116702 e864a82f06192e6055977210fb8e99da ""
   "/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty" 1252107870 7358 95ac619994bd30d405a74f3eca431c84 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty" 1636758526 12694 6c23725d50ab9d1e2d3ce482c58ffcf3 ""
@@ -244,9 +247,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1673563136 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1673563183 2799472 50b7a7dc4a7ad0523bf0ff2f6c488e40 ""
-  "pset1.aux" 1675353918 735 8ce25671eed09de0cf89b6aef4e61fe6 "pdflatex"
-  "pset1.out" 1675353918 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "pset1.tex" 1675353916 14348 2feef0f0ac622d45084812adf32e1d46 ""
+  "pset1.aux" 1675643070 735 8ce25671eed09de0cf89b6aef4e61fe6 "pdflatex"
+  "pset1.out" 1675643069 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "pset1.tex" 1675643065 16455 a51bd2d6a14c46d8425397d8af003d13 ""
   (generated)
   "pset1.aux"
   "pset1.log"

@@ -184,20 +184,32 @@
         \item If  $R$ is  symmetric  then $R^n$ is symmetric.
         \item If  $R$ is  transitive  then $R^n$ is transitive.
     \end{enumerate}}
-    \answer{}
-    \\[12pt]
+    
     \question{
     Suppose that $R$ and $S$ are reflexive relations on a set $A$. Prove or disprove each of these statements.
     \begin{enumerate}[a)]
         \item $R\cup S$ is reflexive.
+        \begin{proof}
+            $\forall x \in A$, since $R$ and $S$ are reflexive, $xRx$ and $xSx$. Therefore, $x(R \cup S)x$.
+        \end{proof}
         \item $R\cap S$ is reflexive.
+        \begin{proof}
+            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R$ and $(x,x) \in S$. Therefore, $(x,x) \in R \cap S$. Since $(x,x) \in R \cap S$, $x(R \cap S)x$.s
+        \end{proof}
         \item $R\oplus S$ is irreflexive.
+        \begin{proof}
+            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \not\in R \oplus S$. Since $(x,x) \not\in R \oplus S$, it follows that $R \oplus S$ is irreflexive.
+        \end{proof}
         \item $R - S$ is irreflexive.
+        \begin{proof}
+            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \not\in R - S$. Since $(x,x) \not\in R - S$, it follows that $R - S$ is irreflexive.
+        \end{proof}
         \item $S \comp R$ ($S$ composed with $R$) is reflexive.
+        \begin{proof}
+            $\forall x \in A$, Since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \in S \comp R$. Since $(x,x) \in S \comp R$, it follows that $S \comp R$ is reflexive.
+        \end{proof}
     \end{enumerate}}
-
-    \answer{}
-    \\[12pt]
+    
     \question{
     Find the matrix that represents the  relation $R$ on $\{1,2,3,4,6,12\}$, where $aRb$ means $a | b$. Use elements in the order given to determine rows and columns of the matrix.}
 
@@ -253,7 +265,7 @@
     \end{figure}}
     \question{
     A Lemma in the book states: {\em Let $A$ be a set with $n$ elements, and let $R$ be a relation on $A$. If there is a path of length at least one in $R$ from $a$ to $b$, then there is such a path with length not exceeding $n$. Moreover, when $a \neq b$, if there is a path of length at least one in R from a to b, then there is such a path with length not exceeding $n-1$}. The book proves for the case that $a=b$. Find the proof for the case that $a \neq b$.}
-    
+    \\[12pt]
     \answer{}
     \\[12pt]
     \question{\label{question}
@@ -406,7 +418,28 @@
     \pagebreak
 
     \question{
-    In $A \rel A$ from question \hyperref[question]{Question 6} above remove or add the least amount of  elements so that $A \rel A$ represents an equivalence relation.}
+    In $A \rel A$ from question \hyperref[question]{Question 6} above remove or add the least amount of elements so that $A \rel A$ represents an equivalence relation.}
 
-    \answer{}
-\end{document}
+    For $A \rel A$ to represent an equivalence relation, it must be reflexive, symmetric and transitive.    
+
+    To be reflexive, there must be a relation from each element to itself. Therefore, $(b,b),(c,c),(d,d),(e,e)$ must be added to $R$.
+
+    To be transitive, $\forall a \forall b \forall c \in A (aRb \land bRc \to aRc)$. 
+    \begin{itemize}
+        \item $aRb \land bRc \to aRc$
+        \item $aRc \land cRd \to aRd$
+        \item $bRc \land cRd \to bRd$
+        \item $bRd \land dRa \to bRa$
+        \item $cRd \land dRa \to cRa$
+        \item $dRb \land bRc \to dRc$
+    \end{itemize}    
+    Therefore, $(a,c),(a,d),(b,a),(b,d),(c,a),(d,c)$ must be added to $R$.
+    \[ \begin{bmatrix}
+        1 & 1 & 1 & 1 & 0 \\
+        1 & 1 & 1 & 1 & 0 \\
+        1 & 1 & 1 & 1 & 0 \\
+        1 & 1 & 1 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 1 \\
+    \end{bmatrix} \]
+    To be symmetric, $\forall a \forall b \in A (aRb \leftrightarrow bRa)$, which is already satisfied. Therefore, 10 elements must be added to $R$ to create an equivalence relation.
+\end{document} 
