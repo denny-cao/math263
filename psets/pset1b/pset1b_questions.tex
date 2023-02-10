@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}  
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage[ all]{xy}
+\voffset=-.8cm
+\hoffset=-1.5cm
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{16.5cm}
+\pagestyle{myheadings}
+\newtheorem{q} {Q}
+\newtheorem{dfntn}{Definition}
+\newcommand{\df}{\displaystyle\frac}
+\newcommand{\eqq}{\end{q}\newpage}
+\newcommand{\beq}{\begin{q}\hskip-.2cm) }
+\markright {Dr. Petrescu MATH263 Practice Exam 1 \hfill Justify all your answers\hfill}
+\begin{document}
+{\bf Show all your work. No essays, be concise}  \vskip0.2cm 
+{\bf Name}: \rule{8cm}{.01cm}\hspace*{0.2cm} {\bf Due Date}: \underline{02/05} \vskip.5cm
+%%%questions
+\beq  Determine whether the relation given by the digraph below is an equivalence relation. Justify your answer.\vskip.5cm
+ \xygraph{ !{<0cm,0cm>;<3cm,0cm>:<0cm,3cm>::} !{(0,0);a(0)**{}?(1.0)}*+[red]{\bullet_{a}}="a" !{(0,0);a(72)**{}?(1.0)}*+[blue]{\bullet_{b}}="b" !{(0,0);a(108)**{}?(0.5)}*+[red]{\bullet_{c}}="c" !{(0,0);a(216)**{}?(1.0)}*+[green]{\bullet_{d}}="d" !{(0,0);a(288)**{}?(1.0)}*+[red]{\bullet_{e}}="e" !{(0,0);a(0)**{}?(1.8)}*+{\bullet_{f}}="f" !{(0,0);a(72)**{}?(1.8)}*+[blue]{\bullet_{g}}="g" !{(-1,0);a(144)**{}?(1.8)}*+[blue]{\bullet_{h}}="h" !{(0,0);a(252)**{}?(.8)}*+[green]{\bullet_{i}}="i" !{(0,0);a(288)**{}?(1.8)}*+[green]{\bullet_{j}}="j" "a":"c""c":@/^1cm/"a""c":"e""e":@/^1cm/"c" "a":@/_1cm/"e""e":"a""c":@/^1cm/"f" "g":"h" "b":"h" "i":"h" "j":"i" "j":"f" "a":"f"  "f":@/^.2cm/"a" "b":"g" "j":"d" "j":"e" "d":"h" "i":@/_.6cm/"d" "j":@/^4.6cm/"h" "d":"i" "e":@/_.5cm/"f" "f":"e""a":@(ru,rd)"a""b":@(ru,rd)"b" "c":@(lu,ld)"c""d":@(ld,lu)"d""e":@(ru,rd)"e" "f":@(ru,rd)"f""g":@(ru,rd)"g" "h":@(lu,ld)"h" "i":@(lu,ld)"i""j":@(ru,rd)"j" "h":@/_.2cm/"d""h":@/_.4cm/"i""h":@/_6cm/"j" "f":@/_.2cm/"j""g":@/_.4cm/"b""h":@/_.6cm/"b""h":@/_.8cm/"g""d":@/_.8cm/"j""i":@/_.8cm/"j" "e":@/_.2cm/"j"}  \eqq
+\beq  Determine whether the relation given by the digraph below is a partial order.  If it is, draw its Hasse diagram.\vskip.5cm \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,1.5cm>::} !{(-1,0) }*+{\bullet_{A}}="a" !{(-1,2) }*+{\bullet_{B}}="b" !{(0,0)}*+{\bullet_{C}}="c"!{(0,2)}*+{\bullet_{D}}="d" !{(1,0)}*+{\bullet_{E}}="e"!{(1,2)}*+{\bullet_{f}}="f" "a" :@(lu,ld) "a"  "e" :@(ru,rd) "e"  "f" :@(ru,rd) "f" "a":"c"  "e":"c"  "e":"d"  "a":"b"  "a":"d" "b" :@(lu,ld) "b""c" :@(r,ld) "c" "c":"d" "d":"b" "d":"f" "d" :@(l,ru) "d" "e":"f" "a":"f" "e":"b" "c":"f" "c":"b"} \eqq
+\beq What is the transitive closure of the relation $R=\{(1, 2), (1, 4), (2, 3), (3, 1), (4, 2)\}$  \eqq
+\beq Show that the relation $R = \{(x, y) | x - y \in \mathbb{Z} 	\}$ is an equivalence relation on the set of rational numbers. What are the equivalence classes of 0 and $\frac12$ ?
+ \eqq %%%questions
+\end{document}
