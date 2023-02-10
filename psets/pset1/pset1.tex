@@ -78,7 +78,7 @@
 \newcommand{\courseName}{Discrete Mathematics 2}
 \newcommand{\professor}{Dr. Petrescu}
 \newcommand{\psetName}{Practice Exam 1}
-\newcommand{\dueDate}{Due: February 3, 2023}
+\newcommand{\dueDate}{Due: February 6, 2023}
 \newcommand{\name}{Denny Cao}
 \pagestyle{fancy}
 \fancyhf{}% clears all header and footer fields
@@ -181,8 +181,41 @@
     Give a counter example or prove  the following assertions:
     \begin{enumerate}[a.]
         \item If  $R$ is  reflexive then  $R^n$ is reflexive.
-        \item If  $R$ is  symmetric  then $R^n$ is symmetric.
-        \item If  $R$ is  transitive  then $R^n$ is transitive.
+        \begin{proof}
+            This statement is true. Let $P(n)$ be the statement that, if $R$ is reflexive, then $R^n$ is reflexive. We will prove by induction.
+
+            \textbf{Base Case:}  $n = 1$. Since $R$ is reflexive, $R^1$ is reflexive. Thus, $P(1)$ is true.
+            
+            \textbf{Inductive Hypothesis:} Assume that $P(k)$ is true, $k \in \nats$. We will show that $P(k) \to P(k+1)$.
+
+            \textbf{Inductive Step:} $R^{k+1} = R^k \comp R$. $R$ is reflexive, and $R^k$ is reflexive by the inductive hypothesis. Therefore, $\forall x \in A((x,x) \in R \land (x,x) \in R^k)$. By the definition of composition, $\forall x \forall y \forall z \in A ((x,y) \in R \land (y,z) \in R^k) \leftrightarrow (x,z) \in R^{k+1}$. In this case, $y = z = x$, so $\forall x \in A ((x,x) \in R^{k+1})$. Therefore, $R^{k+1}$ is reflexive, meaning $P(k) \to P(k+1)$ is true. 
+
+            \textbf{Conclusion:} By principle of mathematical induction, $P(n)$ is true for all $n \in \nats$, meaning $R^n$ is reflexive. 
+        \end{proof}
+        \item If $R$ is symmetric then $R^n$ is symmetric.
+        \begin{proof}
+            This statement is true. Let $P(n)$ be the statement that, if $R$ is symmetric, then $R^n$ is symmetric. We will prove by induction.
+
+            \textbf{Base Case:}  $n = 1$. Since $R$ is symmetric, $R^1$ is symmetric. Thus, $P(1)$ is true.
+            
+            \textbf{Inductive Hypothesis:} Assume that $P(k)$ is true, $k \in \nats$. We will show that $P(k) \to P(k+1)$.
+
+            \textbf{Inductive Step:} $R^{k+1} = R^k \comp R$. By definition of composition, $\forall x\forall y \forall z \in A ((x,y) \in R \land (y,z) \in R^k \leftrightarrow (x,z) \in R^{k+1})$. The elements of $R^k \comp R$ are $(x,z)$, where $(x,y)$ is in $R^k$ and $(x,z)$ is in $R$. As $R^k$ is symmetric, $\forall x\forall y \in A ((x,y) \in R \leftrightarrow (y,x) \in R)$. As $R$ is symmetric, $\forall y \forall z ((y,z) \in R^k \leftrightarrow (z,y) \in R^k)$. Thus, $(z,x)$ is in $R^k \comp R$, where $(y,x)$ is in $R$ and $(z,x)$ is in $R^k$. Therefore, by definition of symmetry, $R^{k+1}$ is symmetric, meaning $P(k) \to P(k+1)$ is true.
+
+            \textbf{Conclusion:} By principle of mathematical induction, $P(n)$ is true for all $n \in \nats$, meaning $R^n$ is reflexive.     
+        \end{proof}
+        \item If $R$ is transitive then $R^n$ is transitive.
+        \begin{proof}
+            This statement is true. Let $P(n)$ be the statement that, if $R$ is transitive, then $R^n$ is transitive. We will prove by induction.
+
+            \textbf{Base Case:} $n = 1$. Since $R$ is transitive, $R^1$ is transitive. Thus, $P(1)$ is true.
+
+            \textbf{Inductive Hypothesis:} Assume that $P(k)$ is true, $k \in \nats$. We will show that $P(k) \to P(k+1)$.
+
+            \textbf{Inductive Step:} If $(a,b),(b,c)\in R^{k+1}$, then by definition of composition, $\exists x \mid (a,x) \in R^k \land (x,b) \in R$ and $\exists y \mid (b,y) \in R^k \land (y, c) \in R$. Since $R$ is transitive, $R^k\subseteq R$. Thus, $(x,b),(y,c)\in R$. Since $(a,x),(x,b)\in R$, $(a,b)\in R$. Since $(a,b),(b,y)\in R$, $(a,y)\in R$. We know that $(a,y)\in R$ and $(y,c)\in R^k$, so by definition of composition, $(a,c)\in R^{k+1}$.
+
+            \textbf{Conclusion:} By principle of mathematical induction, $P(n)$ is true for all $n \in \nats$, meaning $R^n$ is transitive.
+        \end{proof}
     \end{enumerate}}
     
     \question{
@@ -190,23 +223,23 @@
     \begin{enumerate}[a)]
         \item $R\cup S$ is reflexive.
         \begin{proof}
-            $\forall x \in A$, since $R$ and $S$ are reflexive, $xRx$ and $xSx$. Therefore, $x(R \cup S)x$.
+            $\forall x \in A$, since $R$ is reflexive, $(x,x) \in R$. As $R \subseteq R \unite S$, $(x,x) \in R \unite S$. Therefore, $R \unite S$ is reflexive.
         \end{proof}
         \item $R\cap S$ is reflexive.
         \begin{proof}
-            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R$ and $(x,x) \in S$. Therefore, $(x,x) \in R \cap S$. Since $(x,x) \in R \cap S$, $x(R \cap S)x$.s
+            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R$ and $(x,x) \in S$. By definition of intersection, for some $x$, if $x \in R \land x \in S \leftrightarrow x \in R \inter S$. Therefore, $(x,x) \in R \cap S$. Thus, $R \cap S$ is reflexive.
         \end{proof}
         \item $R\oplus S$ is irreflexive.
         \begin{proof}
-            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \not\in R \oplus S$. Since $(x,x) \not\in R \oplus S$, it follows that $R \oplus S$ is irreflexive.
+            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \not\in R \oplus S$. Thus, $R \oplus S$ is irreflexive.
         \end{proof}
         \item $R - S$ is irreflexive.
         \begin{proof}
-            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \not\in R - S$. Since $(x,x) \not\in R - S$, it follows that $R - S$ is irreflexive.
+            $\forall x \in A$, since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \not\in R - S$. Thus, $R - S$ is irreflexive.
         \end{proof}
         \item $S \comp R$ ($S$ composed with $R$) is reflexive.
         \begin{proof}
-            $\forall x \in A$, Since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. Therefore, $(x,x) \in S \comp R$. Since $(x,x) \in S \comp R$, it follows that $S \comp R$ is reflexive.
+            $\forall x \in A$, Since $R$ and $S$ are reflexive, $(x,x) \in R \land (x,x) \in S$. By definition of composition, $\forall x \in A((x,y) \in R \land (y,z) \in S \leftrightarrow (x,z) \leftrightarrow S \comp R)$. Therefore, $(x,x) \in S \comp R$. In this case, $y = x$ and $z = x$. Therefore, $(x,x) \in S \comp R$. Thus, $S \comp R$ is reflexive.
         \end{proof}
     \end{enumerate}}
     
@@ -225,8 +258,6 @@
             0 & 0 & 0 & 0 & 0 & 1 \\
         \end{bmatrix}\]
     \end{figure}}
-    \answer{}
-    \\[12pt]
     \question{
     Draw the directed graph for the relation defined by the matrix:
     \[ M = \begin{bmatrix}
@@ -265,9 +296,16 @@
     \end{figure}}
     \question{
     A Lemma in the book states: {\em Let $A$ be a set with $n$ elements, and let $R$ be a relation on $A$. If there is a path of length at least one in $R$ from $a$ to $b$, then there is such a path with length not exceeding $n$. Moreover, when $a \neq b$, if there is a path of length at least one in R from a to b, then there is such a path with length not exceeding $n-1$}. The book proves for the case that $a=b$. Find the proof for the case that $a \neq b$.}
-    \\[12pt]
-    \answer{}
-    \\[12pt]
+    
+    \answer{
+        \begin{proof}
+            Suppose that there is a path of at least one in $R$ from $a$ to $b$. Let $m$ be the length of the shortest path. Suppose that $x_0,x_1,x_2,\ldots,x_{m-1},x_m$, where $x_0=a$ and $x_m=b$, is such a path.
+            \\[12pt]
+            Suppose that $a\neq b$ and $m\geq n+1$. Since this path contains all $n$ vertices, by the pigeonhole principle, at least two are equal.
+            \\[12pt]
+            Suppose that $x_i=x_j$ with $0\leq i\leq j\leq m-1$. Then the path contains a circuit from $x_i$ to itself. This circuit can be deleted from the path from $a$ to $b$, leaving a path of shorter length. This process can be repeated until there are no more circuits, which means each vertex is contained in the path once and only once. Hence, the path contains exactly $n$ vertices, so there exists a path of length $n-1$.
+        \end{proof}
+    }
     \question{\label{question}
     Draw the directed graph that represents the relation: 
     \[ A \rel A=\{( a, a), ( a, b), ( b, c), ( c, b), ( c, d), ( d, a), ( d, b)\} \]
@@ -303,6 +341,7 @@
     \end{figure}}
     \question{
     Find the matrix of the relation of $A \rel A$  from \hyperref[question]{Question 6} above.}
+
     \answer{
     \[ R = \begin{bmatrix}
         1 & 1 & 0 & 0 & 0 \\
@@ -311,7 +350,6 @@
         1 & 1 & 0 & 0 & 0 \\
         0 & 0 & 0 & 0 & 0 \\
     \end{bmatrix} \]}
-    \pagebreak
     \question{
     From the directed graph of  question \hyperref[question]{Question 6} above draw the digraph of $\bar{R}$ (the complement of $R$).}
 
@@ -356,7 +394,6 @@
             \draw[edge] (e) to[loop below] (e);
         \end{tikzpicture}
     \end{figure}}
-    \pagebreak
     \question{
     Find the matrix of the relation of $A{\bar R}A$  from question \hyperref[question]{Question 6} above.}
 
@@ -369,7 +406,6 @@
         0 & 0 & 1 & 1 & 1 \\
         1 & 1 & 1 & 1 & 1 \\
     \end{bmatrix} \]}
-    \pagebreak
 
     \question{
     From the directed graph of question \hyperref[question]{Question 6} above draw the digraph of $R^{-1}$ (the inverse of $R$).}
@@ -403,43 +439,28 @@
 
         \end{tikzpicture}
     \end{figure}}
-    \pagebreak
+
     \question{
     Find the matrix of the relation of $A \rel^{-1}A$ from question \hyperref[question]{Question 6} above.}
 
     \answer{The inverse of $R$ is the matrix:
-    \[ \begin{bmatrix}
+    \[ R^{-1} = \begin{bmatrix}
         1 & 0 & 0 & 1 & 0 \\
         1 & 0 & 1 & 1 & 0 \\
         0 & 1 & 0 & 0 & 0 \\
         0 & 0 & 1 & 0 & 0 \\
         0 & 0 & 0 & 0 & 0 \\
     \end{bmatrix} \]}
-    \pagebreak
 
     \question{
     In $A \rel A$ from question \hyperref[question]{Question 6} above remove or add the least amount of elements so that $A \rel A$ represents an equivalence relation.}
 
+    \answer{
     For $A \rel A$ to represent an equivalence relation, it must be reflexive, symmetric and transitive.    
-
+    \\[12pt]
     To be reflexive, there must be a relation from each element to itself. Therefore, $(b,b),(c,c),(d,d),(e,e)$ must be added to $R$.
-
-    To be transitive, $\forall a \forall b \forall c \in A (aRb \land bRc \to aRc)$. 
-    \begin{itemize}
-        \item $aRb \land bRc \to aRc$
-        \item $aRc \land cRd \to aRd$
-        \item $bRc \land cRd \to bRd$
-        \item $bRd \land dRa \to bRa$
-        \item $cRd \land dRa \to cRa$
-        \item $dRb \land bRc \to dRc$
-    \end{itemize}    
-    Therefore, $(a,c),(a,d),(b,a),(b,d),(c,a),(d,c)$ must be added to $R$.
-    \[ \begin{bmatrix}
-        1 & 1 & 1 & 1 & 0 \\
-        1 & 1 & 1 & 1 & 0 \\
-        1 & 1 & 1 & 1 & 0 \\
-        1 & 1 & 1 & 1 & 0 \\
-        0 & 0 & 0 & 0 & 1 \\
-    \end{bmatrix} \]
-    To be symmetric, $\forall a \forall b \in A (aRb \leftrightarrow bRa)$, which is already satisfied. Therefore, 10 elements must be added to $R$ to create an equivalence relation.
+    \\[12pt]
+    To be symmetric, $\forall x \forall y \in A ((x,y) \in R \leftrightarrow (y,x) \in R)$. Therefore, $(a,d)$ xor $(d,a)$ must change, $(b,d)$ xor $(d,b)$ must change and $(c,d)$ xor $(d,c)$ must change.
+    \\[12pt]
+    We can remove $(a,b), (c,d), (d,a), (d,b)$ to create a symmetric relation and add $(b,b),(c,c),(d,d),(e,e)$ to create a reflexive relation: $R = \set*{( a, a), (b, b), ( b, c), ( c, b), ( c, c), ( d, d), ( e, e)}$. As $\forall x \forall y \forall z \in A ((x,y) \in R \land (y,z) \in R \rightarrow (x,z) \in R)$,this is also a transitive relation. As this relation is reflexive, symmetric and transitive, it is an equivalence relation. Thus, with 8 changes we can transform $R$ into an equivalence relation.}
 \end{document} 
