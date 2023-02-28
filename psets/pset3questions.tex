@@ -1,0 +1,33 @@
+\documentclass[12pt]{amsart}  
+\usepackage{latexsym}
+\usepackage[colour, all, curve, arc, frame]{xy}
+\usepackage{amsmath,amssymb}
+\usepackage{tkz-graph}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata}
+\usepackage[latin1]{inputenc}
+\voffset=-.8cm
+\hoffset=-2cm
+\setlength{\textheight}{22.60cm}
+\setlength{\textwidth}{14.00cm}
+\pagestyle{myheadings}
+\newtheorem{q} {Q}
+\newtheorem{dfntn}{Definition} 
+\newcommand{\df}{\displaystyle\frac}
+\markright {Dr. Petrescu CCP MATH263 Homework 3}
+\begin{document}
+%%%questions
+\begin{q}   Solve the traveling salesperson problem for this graph by finding the total weight of all Hamilton circuits and determining a circuit with minimum total weight.  \vskip.6cm  \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::} !~-{@{-}@[|(3)]@[red]}!{(0,0) }*+[blue]{\bullet_{a}}="a" !{(1,1) }*+[blue]{\bullet_{b}}="b" !{(2,1) }*+[blue]{\bullet_{c}}="c" !{(1,-1)}*+[blue]{\bullet_{d}}="d"  "a"-"c"_(0.7){7}  "a"-"b"^(0.5){3} "a"-"d"_(0.3){4} "d" -"b" ^(0.4){9}  "b"-"c"^(0.4){6}  "c"-"d"^(0.6){4} }\end{q}\newpage
+\begin{q}   Try to daw the given  graph without any crossings.  If it is not possible explain why.\vskip.6cm \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::}!~-{@{-}@[|(2.5)]@[blue]} !{(2,2) }*+{\bullet_{a}}="a" !{(1,1) }*+{\bullet_{b}}="b" !{(2,0) }*+{\bullet_{e}}="e" !{(3,1)}*+{\bullet_{c}}="c"!{(0,0)}*+{\bullet_{d}}="d" !{(4,0)}*+{\bullet_{f}}="f"  "a"-"b" "a"-"c"  "a"-"e" "b"-"d" "f"-"b" "d"- "c"   "d"-"e"  "f"-"e" "f"-"c"  } \end{q}\newpage
+\begin{q}  An edge coloring of a graph is an assignment of colors to edges so that edges incident with a common vertex are assigned different colors. The edge chromatic number of a graph is the smallest number of colors that can be used in an edge coloring of the graph. The edge chromatic number of a graph G is denoted by $\chi(G)$.  Find the edge chromatic numbers of: \vskip.3cm\hskip1cm a) $C_n$, where  $n \ge 3$.\hskip3.5cm b) $W_n$, where $n \ge 3$. \end{q}\newpage
+\begin{q} Find the edge chromatic number of $K_n$ when n is a positive integer. \end{q}\newpage
+\begin{q}   Show that if $G$ is a bipartite simple graph with $v$ vertices and $e$ edges, then $e \leq \frac{v^2}4$. \end{q}\newpage
+\begin{q}  Suppose that you have a three-gallon jug and a five-gallon jug. You may fill either jug with water, you may empty either jug, and you may transfer water from either jug into the other jug. Use a path in a directed graph to show that you can end up with a jug containing exactly one gallon. [Hint: Use an ordered pair (a, b) to indicate how much water is in each jug. Represent these ordered pairs by vertices. Add an edge for each allowable operation with the jugs.\end{q}\newpage
+\begin{q} Find the number of paths of length n between any two adjacent vertices in $K_{3,3}$ for the values of $n$ in $\{3, 4, 5, 6\}$    \end{q}\newpage
+\begin{q} Determine whether  ({\em i}) Dirac's theorem can be used to show  the graphs below have a Hamilton circuit, ({\em ii}) whether Ore's theorem can be used and finally ({\em iii}) if the graph has a Hamilton circuit.\vskip.5cm \hskip3.5cm\begin{tikzpicture} \SetGraphUnit{1}\tikzset{VertexStyle/.style ={draw,shape = circle,shading= ball,ball color= red ,minimum size= 16pt,color= blue, text=white}};\coordinate (o) at (0,0);\SO(o){a} \NO(o){b} \SOEA(a){d}\SOWE(a){c}\NOEA(b){e} \NOWE(b){f}\NOEA(f){g}\NOWE(c){h}\NOEA(d){i}\Edges(a,b,f,e,d,a,b,e,g,h,g,i,a)\Edges(d,c,f)\Edges(b,e)\Edges(c,a,h)\Edges(g,f)\end{tikzpicture}\end{q}\newpage
+\begin{q} Find the length of a shortest path between \{({\it x} and {\it z}),( {\it v} and {\it w}), ({\it t} and {\it z})\} in the weighted graph below, using Djikstra algorithm. Show each step. \vskip.6cm \hskip1cm\begin{tikzpicture}\SetGraphUnit{3}\tikzset{VertexStyle/.style ={draw,shape = circle,shading= ball, ball color= blue,minimum size= 24pt, color= white}} \Vertex{x}\NOEA(x){t}\EA(t){v}\SOEA(v){z}\SOWE(z){y}\WE(y){w}\NOWE(w){x}\tikzset{LabelStyle/.style ={fill=white}}\Edge[label=$1.51$](x)(t)\Edge[label=$2.13$](t)(v)\Edge[label=$2.09$](v)(z)\Edge[label=$1.92$](y)(z)\Edge[label=$1.36$](w)(y)\Edge[label=$2.08$](v)(y)\Edge[label=$1.35$](x)(w)\Edge[label=$1.64$](t)(y)\end{tikzpicture}\end{q}\newpage
+\begin{q} Prove the following statement: If H is a subgraph of G and G is a planar simple graph, then H is also planar.\end{q}\newpage
+\begin{q}  Find the  chromatic number, $\chi(G)$, of the graph below  and decide whether or not the graph is planar. Justify your answer.  \vskip1.5cm  \hskip3cm \xygraph{ !{<0cm,0cm>;<0cm,2cm>:<-2cm,0cm>::} !{(0,0);a(0)**{}?(1.0)}*{\bullet}="a1" !{(0,0);a(72)**{}?(1.0)}*{\bullet}="a2" !{(0,0);a(144)**{}?(1.0)}*{\bullet}="a3" !{(0,0);a(216)**{}?(1.0)}*{\bullet}="a4" !{(0,0);a(288)**{}?(1.0)}*{\bullet}="a5" !{(0,0);a(0)**{}?(1.8)}*{\bullet}="b1" !{(0,0);a(72)**{}?(1.8)}*{\bullet}="b2" !{(0,0);a(144)**{}?(1.8)}*{\bullet}="b3" !{(0,0);a(216)**{}?(1.8)}*{\bullet}="b4" !{(0,0);a(288)**{}?(1.8)}*{\bullet}="b5" "a1"-"a3" "a3"-"a5" "a5"-"a2" "a2"-"a4" "a4"-"a1" "b1"-"b2" "b2"-"b3" "b3"-"b4" "b4"-"b5" "b5"-"b1" "a1"-"b1" "a2"-"b2" "a3"-"b3" "a4"-"b4" "a5"-"b5" }   \end{q}\newpage
+\begin{q} Prove that  Dijkstra's Algorithm  finds the length of the  shortest path between 2 vertices  of a  connected simple undirected  weighted  graph.\\ {\bf NOTE:} Check  the textbook.\end{q}
+%%%question
+\end{document}
