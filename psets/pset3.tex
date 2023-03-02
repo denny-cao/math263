@@ -40,6 +40,7 @@
 \usetikzlibrary{angles,quotes} % for pic
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{automata}
+\usetikzlibrary{arrows.meta, automata, positioning, quotes}
 \tikzset{>=latex} % for LaTeX arrow head
 \contourlength{1.2pt}
 
@@ -125,7 +126,7 @@
 \newcommand{\reals}{\mathbb{R}} % real numbers: textbook is Z^+ and 0
 \newcommand{\ints}{\mathbb{Z}}
 \newcommand{\nats}{\mathbb{N}}
-\newcommand{\rats}{\mathbb{Q}}
+\newcommand{\tots}{\mathbb{Q}}
 
 \newcommand{\degree}{^\circ}
 
@@ -141,7 +142,9 @@
 % Directed Graphs
 \usetikzlibrary{arrows}
 \tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}}
+\tikzset{svertex/.style = {shape=circle,draw,minimum size=.05em,font=\tiny}}
 \tikzset{edge/.style = {->,> = latex'}}
+\tikzset{dedge/.style = {-> = latex'}}
 
 %++++++++++++++++++++++++++++++++++++++++
 % title stuff
@@ -205,8 +208,9 @@
     
     % Answer 2
     \begin{answer}
+        It is not possible to draw the graph which we will denote $G$ without any crossings. 
         \begin{proof}
-            It is not possible to draw the graph which we will denote $G$ without any crossings. We will prove this by showing that the graph is homeomorphic to $K_{3,3}$. Let $K_{3,3}$ be drawn as follows:
+            We will prove this by showing that the graph is homeomorphic to $K_{3,3}$. Let $K_{3,3}$ be drawn as follows:
             \begin{figure}[H]
                 \hfil
                 \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::}!~-{@{-}@[|(2.5)]@[blue]} !{(0,2) }*+{\bullet_{a'}}="a" !{(2,2) }*+{\bullet_{b'}}="b" !{(2,0) }*+{\bullet_{e'}}="e" !{(2,1)}*+{\bullet_{c'}}="c"!{(0,0)}*+{\bullet_{d'}}="d" !{(0,1)}*+{\bullet_{f'}}="f"  "a"-"b" "a"-"c"  "a"-"e" "b"-"d" "f"-"b" "d"- "c"   "d"-"e"  "f"-"e" "f"-"c"  }
@@ -242,6 +246,27 @@
         An edge coloring of a graph is an assignment of colors to edges so that edges incident with a common vertex are assigned different colors. The edge chromatic number of a graph is the smallest number of colors that can be used in an edge coloring of the graph. The edge chromatic number of a graph G is denoted by $\chi(G)$.  Find the edge chromatic numbers of: \vskip.3cm\hskip1cm a) $C_n$, where  $n \ge 3$.\hskip3.5cm b) $W_n$, where $n \ge 3$.
     \end{question}
 
+    % Answer 3
+    \begin{answer}
+        
+    \end{answer}
+    \begin{enumerate}[a)]
+        \item $\chi(C_n) = \begin{cases}
+            2 & n \text{ is even} \\
+            3 & n \text{ is odd}
+        \end{cases}$
+        \begin{proof}
+            Let $E_x$ represent the $x$th edge of $C_n$, where $1 \leq x \leq n-1, x \in \ints$. In $C_n$, an edge $E_c$ share a vertex with $E_{c+1}$ and a different vertex with $E_{c-1}$, and if $c=1$, then $E_c$ shares a vertex with $E_n$ and if $c=n-1$, then $E_c$ shares a vertex with $E_1$. 
+
+            \textbf{Case 1:} $n$ is even. In this case, we can color $E_2k$ with one color and $E_{2k-1}$ with another color for all $k \in \ints$ such that $1 \leq k \leq \frac{n}{2}$. Thus, we can color $C_n$ with two colors, as each vertex has an even and odd edge.
+
+            \textbf{Case 2:} $n$ is odd. In this case, $E_n$ and $E_1$ share a vertex, though $n$ and 1 are both odd. Thus, we can color $E_2k$ with one color and $E_{2k-1}$ with another color for all $k \in \ints$ such that $1 \leq k \leq \frac{n}{2}$. We can then color $E_n$ with a third color. Thus, we can color $C_n$ with three colors.
+        \end{proof}
+        \item $\chi(W_n) = n$
+        \begin{proof}
+            The center vertex of $W_n$ has degree $n$, and therefore there must be at least $n$ colors to color the edges of $W_n$. The outer vertices of $W_n$ have degree 3, which is less than or equal to $n$ and thus $n$ colors is enough to color the edges of $W_n$.
+        \end{proof}
+    \end{enumerate}
     % Question 4
     \begin{question}
         Find the edge chromatic number of $K_n$ when n is a positive integer.
@@ -293,16 +318,88 @@
     \end{question}
 
     % Answer 6 
-    \begin{answer}
+    \begin{answer} \ 
         \begin{figure}[H]
             \centering
-            \begin{tikzpicture}
-                % Vertices
-                \node[vertex] (a) at (0,0) {(0,0)};   
-                \node[vertex] (b) at (-2,-2) {(3,0)};
-                \node[vertex] (c) at (2,-2) {(0,5)};
+            \begin{tikzpicture}[scale=0.75]
+                \node[svertex] (00) at (0,0) {(0,0)}; 
+                \node[svertex] (30) at (-2,-2) {(3,0)};
+                \draw[edge, red] (00) to[bend left] (30); 
+                \draw[edge] (30) to[bend left] (00); 
+                \node[svertex] (05) at (2,-2) {(0,5)};  
+                \draw[edge] (00) to[bend left] (05);
+                \draw[edge] (05) to[bend left] (00);    
+                \node[svertex] (03) at (-4,-4) {(0,3)};
+                \draw[edge, red] (30) to[bend left] (03);
+                \draw[edge] (03) to[bend left] (30);
+                \draw[edge] (03) to[bend left=60] (00);
+                \node[svertex] (35) at (0,-4) {(3,5)};
+                \draw[edge] (30) to[bend left] (35);
+                \draw[edge] (35) to[bend left] (30);
+                \draw[edge] (05) to[bend left] (35);
+                \draw[edge] (35) to[bend left] (05);
+                \node[svertex] (33) at (-4,-6) {(3,3)};
+                \draw[edge, red] (03) to[bend left] (33);
+                \draw[edge] (33) to[bend left] (03);
+                \draw[edge] (33) to (35);
+                \node[svertex] (15) at (-4,-8) {(1,5)};
+                \draw[edge] (15) to[bend left] (33);
+                \draw[edge] (15) to (35);
+                \draw[edge,red] (33) to[bend left] (15);
+                \draw[edge] (15) to[bend right] (05);
+                \node[svertex] (10) at (-4,-10) {(1,0)};
+                \draw[edge] (10) to[bend left] (15);
+                \draw[edge] (15) to[bend left] (10);
+                \draw[edge] (10) to[bend left=60] (00);
+                \node[svertex] (01) at (-4,-12) {(0,1)};
+                \draw[edge] (01) to[bend left] (10);
+                \draw[edge] (10) to[bend left] (01);
+                \draw[edge] (10) to[bend right=50] (30);
+                \draw[edge] (01) to[bend left=60] (00);
+                \draw[edge] (01) to[bend right=45] (05);
+                \node[svertex] (31) at (-4,-14) {(3,1)};
+                \draw[edge] (31) to[bend left] (01);
+                \draw[edge] (01) to[bend left] (31);
+                \draw[edge] (31) to[bend right=15] (35);
+                \node[svertex] (04) at (-4,-16) {(0,4)};
+                \draw[edge] (04) to[bend left] (31);
+                \draw[edge] (31) to[bend left] (04);
+                \draw[edge] (31) to[bend right=35] (30);
+                \draw[edge] (04) to[bend left=60] (00);
+                \draw[edge] (04) to[bend right=25] (05);
+                \node[svertex] (34) at (-2, -16) {(3,4)};
+                \draw[edge] (34) to[bend left] (04);
+                \draw[edge] (04) to[bend left] (34);
+                \draw[edge] (34) to[bend right=15] (35);
+                \draw[edge] (34) to (30);
+                \node[svertex] (32) at (4,-2) {(3,2)};
+                \draw[edge] (32) to[bend left] (05);
+                \draw[edge] (05) to[bend left] (32);
+                \draw[edge] (32) to[bend left] (35);
+                \node[svertex] (02) at (6,-2) {(0,2)};
+                \draw[edge] (02) to[bend left] (32);
+                \draw[edge] (32) to[bend left] (02);
+                \draw[edge] (32) to[bend right=45] (30);
+                \draw[edge] (02) to[bend right] (00);
+                \draw[edge] (02) to[bend right=45] (05);
+                \node[svertex] (20) at (8,-2) {(2,0)};
+                \draw[edge] (20) to[bend left] (02);
+                \draw[edge] (02) to[bend left] (20);
+                \draw[edge] (20) to[bend right] (00);
+                \draw[edge] (20) to[bend right=37.5] (30);   
+                \node[svertex] (25) at (8,-4) {(2,5)};
+                \draw[edge] (25) to[bend left] (20);
+                \draw[edge] (25) to[bend left] (05);
+                \draw[edge] (20) to[bend left] (25);
+                \draw[edge] (25) to[bend left] (35);     
+                \draw[edge] (25) to[bend left=10] (34);
+                \draw[edge] (34) to[bend left=10] (25);        
             \end{tikzpicture}
         \end{figure}
+        To end up with a jug containing exactly one gallon, we can follow the path 
+        \begin{center}
+            $(0,0), (3,0), (0,3), (3,3), (1,5)$
+        \end{center}
     \end{answer}
     % Question 7
     \begin{question}
@@ -368,6 +465,15 @@
         \end{figure}
     \end{question}
 
+    % Answer 8
+    \begin{answer} \ 
+        \begin{enumerate}[\em i)]
+            \item Dirac's theorem states that an $n$-vertex simple graph with $n \geq 3$ in which each vertex has at least degree $\frac{n}{2}$ has a Hamilton circuit. This theorem cannot be used, as there exists a vertex $g$ with degree 4, which is less than $\frac{9}{2} = 4.5$.
+            \item Ore's theorem states that an $n$-vertex simple graph with $n \geq 3$ such that $\deg{u} + \deg{v} \geq n$ for every pair of nonadjacent vertices $u$ and $v$, then the graph has a Hamilton circuit. This theorem cannot be used, as the vertex $g$ has degree 4, and vertex $b$ has degree 3, and $4+3 < 9$.
+            \item No, there is no Hamilton circuit in this graph.
+        \end{enumerate}    
+    \end{answer}
+
     % Question 9
     \begin{question}
         Find the length of a shortest path between \{({\it x} and {\it z}),( {\it v} and {\it w}), ({\it t} and {\it z})\} in the weighted graph below, using Djikstra algorithm. Show each step.
@@ -377,6 +483,42 @@
         \end{figure}
     \end{question}
     
+    % Answer 9
+    \begin{answer}
+        \begin{align*}\begin{array}{cc}
+            \text{visited nodes} & \text{current shortest path} \\
+            \hline \rule{0pt}{1.2\normalbaselineskip}
+            x & 0 \\ 
+            x,w & 1.35 \\ 
+            x,w,t & 1.51 \\ 
+            x,w,t,y & 2.71 \\ 
+            x,w,t,y,v & 3.64 \\ 
+            x,w,t,y,v,z & 4.63
+        \end{array}\end{align*}
+        The shortest path between $v$ and $w$ is $v \to y \to w$, length 3.44. 
+         \begin{align*}\begin{array}{cc}
+            \text{visited nodes} & \text{current shortest path} \\
+            \hline \rule{0pt}{1.2\normalbaselineskip}
+            v & 0 \\
+            v,y & 2.08 \\
+            v,y,z & 2.09 \\
+            v,y,z,t & 2.13 \\
+            v,y,z,t,w & 3.44 \\
+            v,y,z,t,w,x & 3.44
+        \end{array}\end{align*}
+        The shortest path between $t$ and $z$ is $t \to y \to z$, length 3.56. 
+         \begin{align*}\begin{array}{cc}
+            \text{visited nodes} & \text{current shortest path} \\
+            \hline \rule{0pt}{1.2\normalbaselineskip}
+            t & 0 \\
+            t,x & 1.51 \\
+            t,x,y & 1.64 \\
+            t,x,y,v & 2.13 \\
+            t,x,y,v,w & 2.86 \\
+            t,x,y,v,w,z & 3.56
+        \end{array}\end{align*}
+    \end{answer}
+
     % Question 10
     \begin{question}
         Prove the following statement: If H is a subgraph of G and G is a planar simple graph, then H is also planar.
@@ -397,7 +539,8 @@
         \end{figure}
     \end{question}
     % Answer 11
-    \begin{answer}
+    \begin{answer} \ \\
+        \textbf{Part 1:}
         $\chi(G) = 3$. We can color the graph as follows:
         \begin{figure}[H]
             \centering
@@ -424,10 +567,38 @@
                 \filldraw[fill=red] (b5) circle (2pt);
               \end{tikzpicture}
         \end{figure}
-        
+        \textbf{Part 2:} $G$ is not planar. 
+        \begin{proof}
+            We label the vertices of the graph as follows:
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \foreach \i in {1,...,5} {
+                      \coordinate (a\i) at (72*\i + 18:1.11);
+                      \coordinate (b\i) at (72*\i + 18:2.8);
+                    }
+
+                    \draw (a1) -- (a3) -- (a5) -- (a2) -- (a4) -- (a1);
+                    \draw (b1) -- (b2) -- (b3) -- (b4) -- (b5) -- (b1);
+                    \foreach \i in {1,...,5} {
+                      \draw (a\i) -- (b\i);
+                    }
+                    \node[vertex, fill=gray!40] at (a1) {$f$};
+                    \node[vertex, fill=gray!40] at (a2) {$j$};
+                    \node[vertex, fill=gray!40] at (a3) {$i$};
+                    \node[vertex, fill=gray!40] at (a4) {$h$};
+                    \node[vertex, fill=gray!40] at (a5) {$g$};
+                    \node[vertex, fill=gray!40] at (b1) {$a$};
+                    \node[vertex, fill=gray!40] at (b2) {$e$};
+                    \node[vertex, fill=gray!40] at (b3) {$d$};
+                    \node[vertex, fill=gray!40] at (b4) {$c$};
+                    \node[vertex, fill=gray!40] at (b5) {$b$};
+                  \end{tikzpicture}
+            \end{figure}
+        \end{proof}
     \end{answer}
     % Question 12
     \begin{question}
-        Prove that  Dijkstra's Algorithm  finds the length of the  shortest path between 2 vertices  of a  connected simple undirected  weighted  graph.\\ {\bf NOTE:} Check  the textbook.
+        Prove that  Dijkstra's Algorithm  finds the length of the  shortest path between 2 vertices of a connected simple undirected  weighted  graph.\\ {\bf NOTE:} Check  the textbook.
     \end{question}
 \end{document} 
