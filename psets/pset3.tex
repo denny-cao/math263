@@ -72,6 +72,7 @@
 
 
 \usepackage{titling}
+\usepackage{nicematrix}
 \renewcommand\maketitlehooka{\null\mbox{}\vfill}
 \renewcommand\maketitlehookd{\vfill\null}
 \usepackage{siunitx} % units
@@ -176,19 +177,65 @@
     \begin{question}
         Solve the traveling salesperson problem for this graph by finding the total weight of all Hamilton circuits and determining a circuit with minimum total weight.  
         \begin{figure}[H]
-            \centering
+            \hfil
             \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::} !~-{@{-}@[|(3)]@[red]}!{(0,0) }*+[blue]{\bullet_{a}}="a" !{(1,1) }*+[blue]{\bullet_{b}}="b" !{(2,1) }*+[blue]{\bullet_{c}}="c" !{(1,-1)}*+[blue]{\bullet_{d}}="d"  "a"-"c"_(0.7){7}  "a"-"b"^(0.5){3} "a"-"d"_(0.3){4} "d" -"b" ^(0.4){9}  "b"-"c"^(0.4){6}  "c"-"d"^(0.6){4} }
         \end{figure}
     \end{question}
 
+    % Answer 1
+    \begin{answer}
+        There are 3 Hamilton circuits. 
+
+        $H_1 = a,b,c,d,a$ with total weight $3 + 6 + 4 + 4 = 17$.
+        
+        $H_2 = a,c,b,d,a$ with total weight $7+6+9+4=26$.
+        
+        $H_3 = a,c,d,b,a$ with total weight $7+4+9+3=23$.
+
+        The circuit with minimum total weight is $H_1,$ or $a,b,c,d,a$ with total weight 17.
+    \end{answer}
     % Question 2
     \begin{question}
-        Try to daw the given  graph without any crossings.  If it is not possible explain why.
+        Try to draw the given  graph without any crossings.  If it is not possible explain why.
         \begin{figure}[H]
-            \centering
-            \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::}!~-{@{-}@[|(2.5)]@[blue]} !{(2,2) }*+{\bullet_{a}}="a" !{(1,1) }*+{\bullet_{b}}="b" !{(2,0) }*+{\bullet_{e}}="e" !{(3,1)}*+{\bullet_{c}}="c"!{(0,0)}*+{\bullet_{d}}="d" !{(4,0)}*+{\bullet_{f}}="f"  "a"-"b" "a"-"c"  "a"-"e" "b"-"d" "f"-"b" "d"- "c"   "d"-"e"  "f"-"e" "f"-"c"  }
+                \hfil
+                \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::}!~-{@{-}@[|(2.5)]@[blue]} !{(2,2) }*+{\bullet_{a}}="a" !{(1,1) }*+{\bullet_{b}}="b" !{(2,0) }*+{\bullet_{e}}="e" !{(3,1)}*+{\bullet_{c}}="c"!{(0,0)}*+{\bullet_{d}}="d" !{(4,0)}*+{\bullet_{f}}="f"  "a"-"b" "a"-"c"  "a"-"e" "b"-"d" "f"-"b" "d"- "c"   "d"-"e"  "f"-"e" "f"-"c"  }
         \end{figure}
     \end{question}
+    
+    % Answer 2
+    \begin{answer}
+        \begin{proof}
+            It is not possible to draw the graph which we will denote $G$ without any crossings. We will prove this by showing that the graph is homeomorphic to $K_{3,3}$. Let $K_{3,3}$ be drawn as follows:
+            \begin{figure}[H]
+                \hfil
+                \xygraph{ !{<0cm,0cm>;<2cm,0cm>:<0cm,2cm>::}!~-{@{-}@[|(2.5)]@[blue]} !{(0,2) }*+{\bullet_{a'}}="a" !{(2,2) }*+{\bullet_{b'}}="b" !{(2,0) }*+{\bullet_{e'}}="e" !{(2,1)}*+{\bullet_{c'}}="c"!{(0,0)}*+{\bullet_{d'}}="d" !{(0,1)}*+{\bullet_{f'}}="f"  "a"-"b" "a"-"c"  "a"-"e" "b"-"d" "f"-"b" "d"- "c"   "d"-"e"  "f"-"e" "f"-"c"  }
+            \end{figure}
+            Let $V_1$ denote the vertex set of $G$. Let $V_2$ denote the vertex set of $K_{3,3}$. We construct a function $g: V_1 \rightarrow V_2$ by $g(a) = a'$, $g(b) = b'$, $g(c) = c'$, $g(d) = d'$, $g(e) = e'$, and $g(f) = f'$. Let $A_1$ be the adjacency matrix of $G$ and $A_2$ be the adjacency matrix of $K_{3,3}$
+            \begin{align*}
+                \NiceMatrixOptions{code-for-first-row=\scriptstyle,code-for-last-row=\scriptstyle}
+                A_1 &= \begin{bNiceMatrix}[first-row, first-col]
+                     & a & b & c & d & e & f \\
+                    a & 0 & 1 & 1 & 0 & 1 & 0 \\
+                    b & 1 & 0 & 0 & 1 & 0 & 1 \\
+                    c & 1 & 0 & 0 & 1 & 0 & 1 \\
+                    d & 0 & 1 & 1 & 0 & 1 & 0 \\
+                    e & 1 & 0 & 0 & 1 & 0 & 1 \\
+                    f & 0 & 1 & 1 & 0 & 1 & 0 
+                \end{bNiceMatrix} \quad 
+                A_2 = \begin{bNiceMatrix}[first-row, first-col]
+                    & a' & b' & c' & d' & e' & f' \\
+                   a' & 0 & 1 & 1 & 0 & 1 & 0 \\
+                   b' & 1 & 0 & 0 & 1 & 0 & 1 \\
+                   c' & 1 & 0 & 0 & 1 & 0 & 1 \\
+                   d' & 0 & 1 & 1 & 0 & 1 & 0 \\
+                   e' & 1 & 0 & 0 & 1 & 0 & 1 \\
+                   f' & 0 & 1 & 1 & 0 & 1 & 0 
+               \end{bNiceMatrix} 
+            \end{align*}
+            As the adjacency matrices of $G$ and $K_{3,3}$ are the same for corresponding vertices, we have that $g$ is a homeomorphism from $G$ to $K_{3,3}$. Thus, $G$ is not planar, meaning that it cannot be drawn without any crossings.
+        \end{proof}
+    \end{answer}
 
     % Question 3
     \begin{question}
@@ -199,9 +246,15 @@
     \begin{question}
         Find the edge chromatic number of $K_n$ when n is a positive integer.
     \end{question}
-
+    
     % Answer 4
     \begin{answer}
+        \begin{equation*}
+            \chi(K_n) = \begin{cases}
+                n - 1 & n \text{ is even} \\
+                n & n \text{ is odd}
+            \end{cases}
+        \end{equation*}
     \end{answer}
 
     % Question 5
@@ -269,10 +322,9 @@
                 1 & 1 & 1 & 0 & 0 & 0
             \end{bmatrix}
         \end{equation*}
-        We can then find the number of paths of length $n$ between any two adjacent vertices in $K_{3,3}$ by raising the adjacency matrix to the power $n$ and summing the elements. 
+        We can then find the number of paths of length $n$ between any two adjacent vertices in $K_{3,3}$ by raising the adjacency matrix to the power $n$.
         
-        For $n = 3$, we get:
-        \begin{equation*}
+        \begin{align*}
             A^3 = \begin{bmatrix}
                 0 & 0 & 0 & 9 & 9 & 9 \\
                 0 & 0 & 0 & 9 & 9 & 9 \\
@@ -280,11 +332,32 @@
                 9 & 9 & 9 & 0 & 0 & 0 \\
                 9 & 9 & 9 & 0 & 0 & 0 \\
                 9 & 9 & 9 & 0 & 0 & 0
+            \end{bmatrix} &\quad A^4 = \begin{bmatrix}
+                27 & 27 & 27 & 0 & 0 & 0 \\
+                27 & 27 & 27 & 0 & 0 & 0 \\
+                27 & 27 & 27 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 27 & 27 & 27 \\
+                0 & 0 & 0 & 27 & 27 & 27 \\
+                0 & 0 & 0 & 27 & 27 & 27
+            \end{bmatrix} \\
+            A^5 = \begin{bmatrix}
+                0 & 0 & 0 & 81 & 81 & 81 \\
+                0 & 0 & 0 & 81 & 81 & 81 \\
+                0 & 0 & 0 & 81 & 81 & 81 \\
+                81 & 81 & 81 & 0 & 0 & 0 \\
+                81 & 81 & 81 & 0 & 0 & 0 \\
+                81 & 81 & 81 & 0 & 0 & 0 \\
+            \end{bmatrix} &\quad A^6 = \begin{bmatrix}
+                243 & 243 & 243 & 0 & 0 & 0 \\
+                243 & 243 & 243 & 0 & 0 & 0 \\
+                243 & 243 & 243 & 0 & 0 & 0 \\
+                0 & 0 & 0 & 243 & 243 & 243 \\
+                0 & 0 & 0 & 243 & 243 & 243 \\
+                0 & 0 & 0 & 243 & 243 & 243
             \end{bmatrix}
-        \end{equation*}
-        As the path from a vertex $a$ to a vertex $b$ is the same as the path from $b$ to $a$, we can divide the sum of the elements by 2 to get the number of paths of length 3 between any two adjacent vertices in $K_{3,3}$. This gives us $9 \cdot 6 = 54$ paths of length 3. 
-        
-        For $n = 4$, we get:
+        \end{align*}
+        \textbf{There are 9 paths of length 3, 27 paths of length 4, 81 paths of length 5 and 243 paths of length 6 between any two adjacent vertices in $K_{3,3}$.}
+
     \end{answer}
     % Question 8
     \begin{question}
@@ -312,21 +385,46 @@
     % Answer 10
     \begin{answer}
         \begin{proof}
-            As $G$ is a planar graph, it does not contain a subgraph that is isomorphic to $K_{3,3}$ or $K_5$. Since $H$ is a subgraph of $G$, it also does not contain a subgraph that is isomorphic to $K_{3,3}$ or $K_5$. Thus, $H$ is also planar.
+            As $G$ is a planar graph, it does not contain a subgraph that is homeomorphic to $K_{3,3}$ or $K_5$ by Kuratowski's Theorem. Since $H$ is a subgraph of $G$, it also does not contain a subgraph that is homeomorphic to $K_{3,3}$ or $K_5$. Thus, $H$ is also planar.
         \end{proof}
     \end{answer}
     % Quesion 11
     \begin{question}
         Find the  chromatic number, $\chi(G)$, of the graph below  and decide whether or not the graph is planar. Justify your answer.  
         \begin{figure}[H]
-        \centering
+        \hfil
             \xygraph{ !{<0cm,0cm>;<0cm,2cm>:<-2cm,0cm>::} !{(0,0);a(0)**{}?(1.0)}*{\bullet}="a1" !{(0,0);a(72)**{}?(1.0)}*{\bullet}="a2" !{(0,0);a(144)**{}?(1.0)}*{\bullet}="a3" !{(0,0);a(216)**{}?(1.0)}*{\bullet}="a4" !{(0,0);a(288)**{}?(1.0)}*{\bullet}="a5" !{(0,0);a(0)**{}?(1.8)}*{\bullet}="b1" !{(0,0);a(72)**{}?(1.8)}*{\bullet}="b2" !{(0,0);a(144)**{}?(1.8)}*{\bullet}="b3" !{(0,0);a(216)**{}?(1.8)}*{\bullet}="b4" !{(0,0);a(288)**{}?(1.8)}*{\bullet}="b5" "a1"-"a3" "a3"-"a5" "a5"-"a2" "a2"-"a4" "a4"-"a1" "b1"-"b2" "b2"-"b3" "b3"-"b4" "b4"-"b5" "b5"-"b1" "a1"-"b1" "a2"-"b2" "a3"-"b3" "a4"-"b4" "a5"-"b5" }
         \end{figure}
     \end{question}
-
     % Answer 11
     \begin{answer}
-        $\chi(G) = 3$
+        $\chi(G) = 3$. We can color the graph as follows:
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \foreach \i in {1,...,5} {
+                  \coordinate (a\i) at (72*\i + 18:1);
+                  \coordinate (b\i) at (72*\i + 18:1.8);
+                }
+
+                \draw (a1) -- (a3) -- (a5) -- (a2) -- (a4) -- (a1);
+                \draw (b1) -- (b2) -- (b3) -- (b4) -- (b5) -- (b1);
+                \foreach \i in {1,...,5} {
+                  \draw (a\i) -- (b\i);
+                }
+                \filldraw[fill=red] (a1) circle (2pt);
+                \filldraw[fill=blue] (b1) circle (2pt);
+                \filldraw[fill=red] (a2) circle (2pt);
+                \filldraw[fill=green] (b2) circle (2pt);
+                \filldraw[fill=blue] (a3) circle (2pt);
+                \filldraw[fill=red] (b3) circle (2pt);
+                \filldraw[fill=blue] (a4) circle (2pt);
+                \filldraw[fill=green] (b4) circle (2pt);
+                \filldraw[fill=green] (a5) circle (2pt);
+                \filldraw[fill=red] (b5) circle (2pt);
+              \end{tikzpicture}
+        \end{figure}
+        
     \end{answer}
     % Question 12
     \begin{question}
