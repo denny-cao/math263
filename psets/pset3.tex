@@ -16,6 +16,7 @@
 \usepackage{enumerate} % lettered lists
 \usepackage{mathtools} % macros 
 \usepackage{tkz-graph}
+\usepackage{tikz-layers}
 \usepackage[colour, all, curve, arc, frame]{xy} % for diagrams
 \usetikzlibrary{scopes}
 % \usepackage{xcolor} \pagecolor[rgb]{0.12549019607,0.1294117647,0.13725490196} \color[rgb]{0.82352941176,0.76862745098,0.62745098039} % dark theme
@@ -141,10 +142,19 @@
 
 % Directed Graphs
 \usetikzlibrary{arrows}
-\tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}}
+\tikzset{vertex/.style = {shape=circle,draw,minimum size=2em}}
 \tikzset{svertex/.style = {shape=circle,draw,minimum size=.05em,font=\tiny}}
 \tikzset{edge/.style = {->,> = latex'}}
 \tikzset{dedge/.style = {-> = latex'}}
+
+% Contradiction
+\newcommand\contradiction{\mathbin{\mathpalette\xhash\relax}}
+\newcommand{\xhash}[2]{\ooalign{%
+  $#1\xxhash{#1}{-45}$\cr
+  $#1\xxhash{#1}{45}$\cr
+  }%
+}
+\newcommand{\xxhash}[2]{\rotatebox[origin=c]{#2}{$#1\parallel$}}
 
 %++++++++++++++++++++++++++++++++++++++++
 % title stuff
@@ -258,9 +268,9 @@
         \begin{proof}
             Let $E_x$ represent the $x$th edge of $C_n$, where $1 \leq x \leq n-1, x \in \ints$. In $C_n$, an edge $E_c$ share a vertex with $E_{c+1}$ and a different vertex with $E_{c-1}$, and if $c=1$, then $E_c$ shares a vertex with $E_n$ and if $c=n-1$, then $E_c$ shares a vertex with $E_1$. 
 
-            \textbf{Case 1:} $n$ is even. In this case, we can color $E_2k$ with one color and $E_{2k-1}$ with another color for all $k \in \ints$ such that $1 \leq k \leq \frac{n}{2}$. Thus, we can color $C_n$ with two colors, as each vertex has an even and odd edge.
+            \textit{Case 1:} $n$ is even. In this case, we can color $E_2k$ with one color and $E_{2k-1}$ with another color for all $k \in \ints$ such that $1 \leq k \leq \frac{n}{2}$. Thus, we can color $C_n$ with two colors, as each vertex has an even and odd edge.
 
-            \textbf{Case 2:} $n$ is odd. In this case, $E_n$ and $E_1$ share a vertex, though $n$ and 1 are both odd. Thus, we can color $E_2k$ with one color and $E_{2k-1}$ with another color for all $k \in \ints$ such that $1 \leq k \leq \frac{n}{2}$. We can then color $E_n$ with a third color. Thus, we can color $C_n$ with three colors.
+            \textit{Case 2:} $n$ is odd. In this case, $E_n$ and $E_1$ share a vertex, though $n$ and 1 are both odd. Thus, we can color $E_2k$ with one color and $E_{2k-1}$ with another color for all $k \in \ints$ such that $1 \leq k \leq \frac{n}{2}$. We can then color $E_n$ with a third color. Thus, we can color $C_n$ with three colors.
         \end{proof}
         \item $\chi(W_n) = n$
         \begin{proof}
@@ -281,7 +291,12 @@
             \end{cases}
         \end{equation*}
     \end{answer}
-
+    \begin{proof} As each vertex is connected with $n-1$ other vertices, there are a total of $n(n-1)/2$ edges.
+        \\[12pt]
+        \textit{Case 1:} $n$ is even. A separate color can be assigned to $\frac{n}{2}$ vertices, where none share a vertex. Thus, as $\frac{n(n-1)}{2} / \frac{n}{2} = n-1$, we can color $K_n$ with $n-1$ colors.
+        \\[12pt]
+        \textit{Case 2}: $n$ is odd. $\frac{n-1}{2}$ edges can be assigned to each color, where none share a vertex. Thus, as $\frac{n(n-1)}{2} / \frac{n-1}{2} = n$, we can color $K_n$ with $n$ colors.
+    \end{proof}
     % Question 5
     \begin{question}
         Show that if $G$ is a bipartite simple graph with $v$ vertices and $e$ edges, then $e \leq \frac{v^2}4$.
@@ -569,7 +584,7 @@
         \end{figure}
         \textbf{Part 2:} $G$ is not planar. 
         \begin{proof}
-            We label the vertices of the graph as follows:
+            We label the vertices of $G$ as follows:
             \begin{figure}[H]
                 \centering
                 \begin{tikzpicture}
@@ -595,10 +610,124 @@
                     \node[vertex, fill=gray!40] at (b5) {$b$};
                   \end{tikzpicture}
             \end{figure}
+            We will label the graph of $K_{3,3}$ as follows:
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}[scale=1.5]
+                    \node[vertex, fill=gray!40] (j) at (4,0) {$j$};
+                    \node[vertex, fill=gray!40] (h) at (4,-2) {$h$};
+                    \node[vertex, fill=gray!40] (i) at (2,-2) {$i$};
+                    \node[vertex, fill=gray!40] (d) at (2,0) {$d$};
+                    \node[vertex, fill=gray!40] (e) at (0,-2) {$e$};
+                    \node[vertex, fill=gray!40] (f) at (0,0) {$f$};
+
+                    \draw[edge, -] (j) -- (h);
+                    \draw[edge, -] (j) -- (i);
+                    \draw[edge, -] (j) -- (e);
+                    \draw[edge, -] (d) -- (h);
+                    \draw[edge, -] (d) -- (i);
+                    \draw[edge, -] (d) -- (e);
+                    \draw[edge, -] (f) -- (h);
+                    \draw[edge, -] (f) -- (i);
+                    \draw[edge, -] (f) -- (e); 
+                \end{tikzpicture}
+            \end{figure}
+            We can create a graph $H$ that is homeomorphic to $K_{3,3}$ by a sequence of elementary subdivisions: 
+            \begin{itemize}
+                \item Removing the edge $\set*{d,h}$ and adding $\set*{d,c}$ and $\set*{c,h}$
+                \item Removing the edge $\set*{e,f}$ and adding $\set*{e,a}$ and $\set*{a,f}$
+                \item Removing the edge $\set*{i,j}$ and adding $\set*{i,g}$ and $\set*{g,j}$ 
+            \end{itemize}
+            $H$ is as follows:
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}[scale=1.5]
+                    \begin{scope}[on above layer]
+                        %%% Nodes
+                        \node[vertex, fill=gray!40] (a) at (0,2) {$f$};
+                        \node[vertex, fill=gray!40] (b) at (2,2) {$d$};
+                        \node[vertex, fill=gray!40] (c) at (4,2) {$j$};
+                        \node[vertex, fill=gray!40] (d) at (0,0) {$e$};
+                        \node[vertex, fill=gray!40] (e) at (2,0) {$i$};
+                        \node[vertex, fill=gray!40] (f) at (4,0) {$j$};
+                        \node[vertex, fill=gray!40] (g) at (3.2,2.8) {$c$};
+                        \node[vertex, fill=gray!40] (h) at (0,1) {$a$};
+                        \node[vertex, fill=gray!40] (i) at (3,1) {$g$};
+                    \end{scope}
+        
+                    %%% Edges
+                    % \draw[edge] (a) to (d); Step 2
+                    \draw[edge, -] (a) to (e);
+                    \draw[edge, -] plot [smooth, tension=0.8] coordinates {(a) (2,3.2) (4,3.2) (5,1.75) (f)};
+                    \draw[edge, -] (b) to (d);
+                    \draw[edge, -] (b) to (e);
+                    % \draw[edge] (b) to (f); Step 1
+                    \draw[edge, -] plot [smooth, tension=0.8] coordinates {(c) (3,0) (1.3,-0.7) (d)};
+                    \draw[edge, -] (c) to (e);
+                    \draw[edge, -] (c) to (f);
+        
+                    %%% Step 1 Edges
+                    \draw[edge, -] plot [smooth, tension=0.9] coordinates {(b) (g) (4.6,2) (f)};
+        
+                    %%% Step 2 Edges
+                    \draw[edge, -] (a) to (h);
+                    \draw[edge, -] (h) to (d);
+                \end{tikzpicture}
+            \end{figure}
+            $H$ is isomorphic to the following graph:
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \foreach \i in {1,...,5} {
+                      \coordinate (a\i) at (72*\i + 18:1.11);
+                      \coordinate (b\i) at (72*\i + 18:2.8);
+                    }
+
+                    \draw (a1) -- (a3) -- (a5) -- (a2) -- (a4) -- (a1);
+                    \draw (b1) -- (b2) -- (b3) -- (b4);
+                    \foreach \i in {1,...,4} {
+                      \draw (a\i) -- (b\i);
+                    }
+                    \node[vertex, fill=gray!40] at (a1) {$f$};
+                    \node[vertex, fill=gray!40] at (a2) {$j$};
+                    \node[vertex, fill=gray!40] at (a3) {$i$};
+                    \node[vertex, fill=gray!40] at (a4) {$h$};
+                    \node[vertex, fill=gray!40] at (a5) {$g$};
+                    \node[vertex, fill=gray!40] at (b1) {$a$};
+                    \node[vertex, fill=gray!40] at (b2) {$e$};
+                    \node[vertex, fill=gray!40] at (b3) {$d$};
+                    \node[vertex, fill=gray!40] at (b4) {$c$};
+                  \end{tikzpicture}
+            \end{figure}
         \end{proof}
+        This graph is a subgraph of $G$, obtained by removing the vertex $b$ and its adjacent edges: $ba$, $bc$, and $bg$. As $H$ is a subgraph of $G$ and is homeomorphic to $K_{3,3}$, $G$ is not planar.
     \end{answer}
     % Question 12
     \begin{question}
         Prove that  Dijkstra's Algorithm  finds the length of the  shortest path between 2 vertices of a connected simple undirected  weighted  graph.\\ {\bf NOTE:} Check  the textbook.
     \end{question}
+
+    % Answer 12
+    \begin{answer}
+        \begin{proof}
+            By induction. Suppose there are two vertices $a$ and $z$. Let $P(n)$ be the statement that, at the $n$th iteration,
+            \begin{enumerate}[\em i)]
+                \item the label of every vertex $v$ in $S$ is the length of a shortest path from $a$ to this vertex, and
+                \item the label of every vertex not in $S$ is the length of a shortest path from $a$ to this vertex that contains only (besides the vertex itself) vertices in $S$.
+            \end{enumerate}
+            \textbf{Base Case:} $n=0$. As there are no iterations that have been performed, $S = \emptyset$, so the length of a shortest path from $a$ to any vertex other than $a$ is $\infty$. Therefore, the basis is true.
+            \\[12pt]
+            \textbf{Inductive Hypothesis:} Suppose that $P(k)$ is true, $k \geq 1$. Let $v$ be the vertex added to $S$ at the $k+1$st iteration, meaning $v$ is the smallest label not a vertex in $S$ at the end of the $k$th iteration. We will show that $P(k) \to P(k+1)$.
+            \\[12pt]
+            \textbf{Inductive Step:} From the inductive hypothesis, the vertices in $S$ prior to the $k+1$st iteration have the shortest path from $a$ to them and $v$ is labeled with the length of the shortest path from $a$ to $v$. We will prove this by contradiction. 
+            \\[12pt]
+            If this was not true, then there exists a shorter path from $a$ to $v$ containing at least one vertex not in $S$. Let $u$ be the first of these vertices not in $S$ in the path from $a$ to $v$. From the inductive hypothesis \textit{(ii)}, the path from $a$ to $u$ is shorter than the path from $a$ to $v$. Therefore, the path from $a$ to $v$ is not the shortest path from $a$ to $v$. $\contradiction$
+            \\[12pt]
+            This contradicts the choice of $v$. Thus, \textit{(i)} holds for the $k+1$st iteration.
+            \\[12pt]
+            Let $u$ be a vertex not in $S$ after $k+1$ iterations. If the shortest path from $a$ to $u$ does not contain $v$, then, by the inductive hypothesis, its length, $L_k(u)$. If it does contain $v$, then the path is made up of a path from $a$ to $v$ of shortest possible length using elements in $S$ other than $v$, followed by the edge from $v$ to $u$. In this case, its length is $L_k(v) + w(u,v)$. Therefore, \textit{(ii)} is true because $L_{k+1}(u)$ minimizes $L_k(u)$, producing the least value for $L_{k+1}(u)$.
+            \\[12pt]
+            Thus, $P(k+1)$ is true. Therefore, $P(n)$ is true for all $n \geq 0$. Therefore, Dijkstra's Algorithm finds the length of the shortest path between 2 vertices of a connected simple undirected weighted graph.
+        \end{proof}
+    \end{answer}
 \end{document} 
