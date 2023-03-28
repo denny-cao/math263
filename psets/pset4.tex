@@ -24,7 +24,7 @@
 \theoremstyle{definition}
 \newtheorem{example}{Example}[subsubsection]
 \newtheorem*{remark}{Remark}
-\newtheorem{theorem}{Theorem}[subsubsection]
+\newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}[subsubsection]
 \newtheorem{corollary}{Corollary}[subsubsection]
 \hypersetup{
@@ -203,8 +203,117 @@
         \label{a1}
         \begin{enumerate}[(i)]
             \item 2
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (-1,0) {};
+                    \node[dot] (c) at (-2,0) {};
+                    \node[dot] (d) at (-3,0) {};
+
+                    \draw (a) -- (b);
+                    \draw (b) -- (c);
+                    \draw (c) -- (d);
+                \end{tikzpicture} \quad
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (-1,-1) {};
+                    \node[dot] (c) at (0,-1) {};
+                    \node[dot] (d) at (1,-1) {};
+
+                    \draw (a) -- (b);
+                    \draw (a) -- (c);
+                    \draw (a) -- (d);
+                \end{tikzpicture}
+            \end{figure}
             \item 4
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (0,-1) {};
+                    \node[dot] (c) at (0,-2) {};
+                    \node[dot] (d) at (0,-3) {};
+
+                    \draw (a) -- (b);
+                    \draw (b) -- (c);
+                    \draw (c) -- (d);
+                \end{tikzpicture} \quad
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (-1,-1) {};
+                    \node[dot] (c) at (0,-1) {};
+                    \node[dot] (d) at (1,-1) {};
+
+                    \draw (a) -- (b);
+                    \draw (a) -- (c);
+                    \draw (a) -- (d);
+                \end{tikzpicture}
+                \quad
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (-1,-1) {};
+                    \node[dot] (c) at (1,-1) {};
+                    \node[dot] (d) at (1,-2) {};
+
+                    \draw (a) -- (b);
+                    \draw (a) -- (c);
+                    \draw (c) -- (d);
+                \end{tikzpicture}
+                \quad
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (0,-1) {};
+                    \node[dot] (c) at (.5,-2) {};
+                    \node[dot] (d) at (-.5,-2) {};
+
+                    \draw (a) -- (b);
+                    \draw (b) -- (c);
+                    \draw (b) -- (d);
+                \end{tikzpicture}
+            \end{figure}
             \item 3
+            \begin{figure}[H]
+                \centering
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (-1,0) {};
+                    \node[dot] (c) at (-2,0) {};
+                    \node[dot] (d) at (-3,0) {};
+                    \node[dot] (e) at (-4,0) {};
+
+                    \draw (a) -- (b);
+                    \draw (b) -- (c);
+                    \draw (c) -- (d);
+                    \draw (d) -- (e);
+                \end{tikzpicture}
+                \quad
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (-1,-1) {};
+                    \node[dot] (c) at (0,-1) {};
+                    \node[dot] (d) at (1,-1) {};
+                    \node[dot] (e) at (1,-2) {};
+
+                    \draw (a) -- (b);
+                    \draw (a) -- (c);
+                    \draw (a) -- (d);
+                    \draw (d) -- (e);
+                \end{tikzpicture}
+                \quad
+                \begin{tikzpicture}
+                    \node[dot] (a) at (0,0) {};
+                    \node[dot] (b) at (-1.5,-1) {};
+                    \node[dot] (c) at (-.5,-1) {};
+                    \node[dot] (d) at (.5,-1) {};
+                    \node[dot] (e) at (1.5,-1) {};
+
+                    \draw (a) -- (b);
+                    \draw (a) -- (c);
+                    \draw (a) -- (d);
+                    \draw (a) -- (e);
+                \end{tikzpicture}
+            \end{figure}
         \end{enumerate}
     \end{answer}
 
@@ -294,6 +403,7 @@
                     % Thick path 5 to 6
                     \draw [very thick] (A 5) -- (A 6);
                 \end{tikzpicture}
+                \caption*{a)}
             \end{minipage}
             \begin{minipage}[b]{0.5\linewidth}
                 \centering
@@ -314,6 +424,7 @@
                     % Thick path 4 to 5
                     \draw [very thick] (A 4) -- (A 5);
                  \end{tikzpicture}
+                 \caption*{b)}
             \end{minipage}
             \begin{minipage}[b]{0.5\linewidth}
                 \centering
@@ -343,12 +454,50 @@
                     % Thick path c to 4
                     \draw [very thick] (c) -- (4);
                 \end{tikzpicture}
+                \caption*{c)}
             \end{minipage}
             \begin{minipage}[b]{0.5\linewidth}
                 \centering
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                \end{tikzpicture}
+                \begin{tikzpicture}[scale=2]
+                    % Define the vertices
+                    \coordinate (000) at (0,0,0);
+                    \coordinate (001) at (0,0,1);
+                    \coordinate (010) at (0,1,0);
+                    \coordinate (011) at (0,1,1);
+                    \coordinate (100) at (1,0,0);
+                    \coordinate (101) at (1,0,1);
+                    \coordinate (110) at (1,1,0);
+                    \coordinate (111) at (1,1,1);
+                  
+                    % Draw the edges
+                    \draw[black!60,thin] (000) -- (001) -- (011) -- (010) -- (000);
+                    \draw[black!60,thin] (000) -- (100) -- (101) -- (001);
+                    \draw[black!60,thin] (000) -- (010) -- (110) -- (100);
+                    \draw[black!60,thin] (001) -- (101) -- (111) -- (011);
+                    \draw[black!60,thin] (010) -- (011) -- (111) -- (110);
+                    \draw[black!60,thin] (100) -- (110) -- (111) -- (101);
+
+                    % Draw vertices
+                    \foreach \i in {0,1}
+                    \foreach \j in {0,1}
+                    \foreach \k in {0,1}
+                    \node[circle, inner sep=1.5pt, fill=black] at (\i,\j,\k) {};
+
+                    \draw [very thick] (001) -- (101);
+
+                    \draw [very thick] (101) -- (100);
+
+                    \draw [very thick] (100) -- (110);
+
+                    \draw [very thick] (110) -- (111);
+
+                    \draw [very thick] (111) -- (011);
+
+                    \draw [very thick] (011) -- (010);
+
+                    \draw [very thick] (010) -- (000);
+                  \end{tikzpicture}
+                \caption*{d)}
             \end{minipage}
         \end{figure}
     \end{answer}
@@ -362,6 +511,20 @@
     % Answer 5
     \begin{answer}
         \label{a5}
+        \begin{theorem}
+            Kruskal's Algorithm produces a minimal spanning tree of a connected simple graph.
+        \end{theorem}
+        \begin{proof}
+            The proof consists of two parts. The first part is to show that the algorithm produces a spanning tree. The second part is to show that the algorithm produces a minimal spanning tree.
+            \\[12pt]
+            \textbf{Kruskal's Algorithm produces a spanning tree.} A spanning tree is a tree that is connected and contains no cycles. Let $S$ be the subgraph of a connected simple graph $G$ which is the output of Kruskal's Algorithm. $S$ must be connected because otherwise, the algorithm would not have terminated. $S$ must also contain no cycles because each time an edge is added to $S$, the algorithm checks to see if the edge creates a cycle. If the edge creates a cycle, the edge is not added to $S$. Therefore, $S$ is a spanning tree.
+            \\[12pt]
+            \textbf{The spanning tree produced by Krushal's Algorithm is minimal.} We will prove by contradiction. Assume for purposes of contradiction that $S$ is not minimal. Then, there must be an MST with edges not in $S$. Let $T$ be the MST with the least number of edges. 
+
+            Consider the first edge added to $S$ by Krushal's Algorithm but not to $T$, $e$. Then, $T \unite \set*{e}$ must contain a circuit, and, since $S$ has no circuits, one of the edges in the circuit must not be in $S$. Let this edge be $c$. Then, a graph $T' = (T \unite \set*{e}) \setminus \set*{c}$ is a spanning tree of $G$. As $T$ is an MST, $w(e) \geq w(c)$. Also, as $e$ was selected by Kruskal's Algorithm, it must be of minimal weight, meaning $w(e) \leq w(c)$, which implies $w(e) = w(c)$. Therefore, $T'$ is also an MST of $G$, but it has one more edge in common with $S$ than $T$. $\contradiction$
+            \\[12pt]
+            We arrive as a contradiction, as $T$ has the most edges in common with $S$ of any MST of $G$. Therefore, $S$ is a minimal spanning tree.
+        \end{proof}
     \end{answer}
 
     % Question 6
@@ -438,8 +601,29 @@
      \end{question}
 
     % Answer 8
-    \begin{answer}
+    \begin{answer} \
         \label{a8}
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \node (a) at (0,0) {oenology};
+                \node (b) at (3,-1) {phrenology};
+                \node (c) at (-3,-1) {campanology};
+                \node (d) at (2,-2) {ornithology};
+                \node (e) at (-2,-2) {ichthyology};
+                \node (f) at (-1,-3) {limnology};
+                \node (g) at (-4,-2) {alchemy};
+                \node (h) at (-3,-3) {astrology};
+
+                \draw (a) -- (b);
+                \draw (a) -- (c);
+                \draw (b) -- (d);
+                \draw (c) -- (e);
+                \draw (c) -- (g);
+                \draw (e) -- (f);
+                \draw (g) -- (h);
+            \end{tikzpicture}
+        \end{figure}
     \end{answer}
 
     % Question 9
