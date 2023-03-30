@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  29 MAR 2023 21:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.19)  30 MAR 2023 00:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1022,12 +1022,12 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 339--464
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 339--472
 [][] []
  []
 
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 339--464
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 339--472
 [] [] 
  []
 
@@ -1050,7 +1050,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{theorem.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.489         \end{proof}
+l.497         \end{proof}
                          ]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1068,7 +1068,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5]
-Missing character: There is no ; in font nullfont!
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1077,6 +1076,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
+Missing character: There is no ; in font nullfont!
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1084,23 +1084,31 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7] (./pset4.aux)
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8] (./pset4.aux)
 Package rerunfilecheck Info: File `pset4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 47072 strings out of 475071
- 1110792 string characters out of 5778915
- 1570131 words of memory out of 5000000
- 67696 multiletter control sequences out of 15000+600000
+ 47338 strings out of 475071
+ 1114156 string characters out of 5778915
+ 1568858 words of memory out of 5000000
+ 67953 multiletter control sequences out of 15000+600000
  476911 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,89p,3266b,1919s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on pset4.pdf (7 pages, 119738 bytes).
+Output written on pset4.pdf (8 pages, 124235 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 69 named destinations out of 1000 (max. 500000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 78 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
