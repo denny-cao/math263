@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1680056886 "/home/akkaro/math263/psets/pset4.tex" "pset4.pdf" "pset4" 1680056888
-  "/home/akkaro/math263/psets/pset4.tex" 1680056885 26477 53b64e72aecd36aee20445c394b0b6ef ""
+["pdflatex"] 1680140051 "/home/akkaro/math263/psets/pset4.tex" "pset4.pdf" "pset4" 1680140054
+  "/home/akkaro/math263/psets/pset4.tex" 1680140051 36540 df2d587a7e4ba8f1bf907aabdb6630fb ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -87,6 +87,7 @@
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryscopes.code.tex" 1601326656 981 8cdf2521b64200cdb1b1eaccd3e0058b ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex" 1601326656 919 938802205ca20d7c36615aabc4d34be2 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1608933718 11518 738408f795261b70ce8dd47459171309 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex" 1601326656 3360 d7547ac810d5d8570c7b6f7c224d69da ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1621110968 186007 6e7dfe0bd57520fd5f91641aa72dcac8 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex" 1601326656 8843 5533436db3e30fbad1e0440db6027dac ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex" 1601326656 7474 f05a7223b140f230922562ac6a9fede5 ""
@@ -274,9 +275,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1666161220 4595883 1a8137d784f6ac4a90cecb4bdd05a7cf ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1666161259 3058865 e4f58d72146e9845b97136b6e6ac75ce ""
   "/usr/local/texlive/2022/texmf.cnf" 1666161215 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "pset4.aux" 1680056888 1460 22f1b798cc891698713f6d629969e8b0 "pdflatex"
+  "pset4.aux" 1680140053 1460 19db65a50c4ebe2ca5fb88b39f6069d9 "pdflatex"
   "pset4.out" 0 -1 0 "pdflatex"
-  "pset4.tex" 1680056885 26477 53b64e72aecd36aee20445c394b0b6ef ""
+  "pset4.tex" 1680140051 36540 df2d587a7e4ba8f1bf907aabdb6630fb ""
   (generated)
   "pset4.aux"
   "pset4.log"

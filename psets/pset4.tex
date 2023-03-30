@@ -20,6 +20,7 @@
 \usepackage[colour, all, curve, arc, frame]{xy} % for diagrams
 \usetikzlibrary{scopes}
 \usetikzlibrary{graphs,graphs.standard,calc}
+\usetikzlibrary{trees}
 % \usepackage{xcolor} \pagecolor[rgb]{0.12549019607,0.1294117647,0.13725490196} \color[rgb]{0.82352941176,0.76862745098,0.62745098039} % dark theme
 \theoremstyle{definition}
 \newtheorem{example}{Example}[subsubsection]
@@ -205,113 +206,74 @@
             \item 2
             \begin{figure}[H]
                 \centering
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (-1,0) {};
-                    \node[dot] (c) at (-2,0) {};
-                    \node[dot] (d) at (-3,0) {};
-
-                    \draw (a) -- (b);
-                    \draw (b) -- (c);
-                    \draw (c) -- (d);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                        child {[fill]  circle (1.5pt)
+                          child {[fill]  circle (1.5pt)}}};
                 \end{tikzpicture} \quad
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (-1,-1) {};
-                    \node[dot] (c) at (0,-1) {};
-                    \node[dot] (d) at (1,-1) {};
-
-                    \draw (a) -- (b);
-                    \draw (a) -- (c);
-                    \draw (a) -- (d);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)};
                 \end{tikzpicture}
             \end{figure}
             \item 4
             \begin{figure}[H]
                 \centering
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (0,-1) {};
-                    \node[dot] (c) at (0,-2) {};
-                    \node[dot] (d) at (0,-3) {};
-
-                    \draw (a) -- (b);
-                    \draw (b) -- (c);
-                    \draw (c) -- (d);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                        child {[fill]  circle (1.5pt)
+                          child {[fill]  circle (1.5pt)}}};
                 \end{tikzpicture} \quad
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (-1,-1) {};
-                    \node[dot] (c) at (0,-1) {};
-                    \node[dot] (d) at (1,-1) {};
-
-                    \draw (a) -- (b);
-                    \draw (a) -- (c);
-                    \draw (a) -- (d);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)};
                 \end{tikzpicture}
                 \quad
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (-1,-1) {};
-                    \node[dot] (c) at (1,-1) {};
-                    \node[dot] (d) at (1,-2) {};
-
-                    \draw (a) -- (b);
-                    \draw (a) -- (c);
-                    \draw (c) -- (d);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}};
                 \end{tikzpicture}
                 \quad
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (0,-1) {};
-                    \node[dot] (c) at (.5,-2) {};
-                    \node[dot] (d) at (-.5,-2) {};
-
-                    \draw (a) -- (b);
-                    \draw (b) -- (c);
-                    \draw (b) -- (d);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                        child {[fill]  circle (1.5pt)}
+                        child {[fill]  circle (1.5pt)}
+                        };
                 \end{tikzpicture}
             \end{figure}
             \item 3
             \begin{figure}[H]
                 \centering
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (-1,0) {};
-                    \node[dot] (c) at (-2,0) {};
-                    \node[dot] (d) at (-3,0) {};
-                    \node[dot] (e) at (-4,0) {};
-
-                    \draw (a) -- (b);
-                    \draw (b) -- (c);
-                    \draw (c) -- (d);
-                    \draw (d) -- (e);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                        child {[fill]  circle (1.5pt)
+                          child {[fill]  circle (1.5pt)}}};
                 \end{tikzpicture}
                 \quad
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (-1,-1) {};
-                    \node[dot] (c) at (0,-1) {};
-                    \node[dot] (d) at (1,-1) {};
-                    \node[dot] (e) at (1,-2) {};
-
-                    \draw (a) -- (b);
-                    \draw (a) -- (c);
-                    \draw (a) -- (d);
-                    \draw (d) -- (e);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                        child {[fill]  circle (1.5pt)}
+                          child {[fill]  circle (1.5pt)
+                            child {[fill]  circle (1.5pt)}};
                 \end{tikzpicture}
                 \quad
-                \begin{tikzpicture}
-                    \node[dot] (a) at (0,0) {};
-                    \node[dot] (b) at (-1.5,-1) {};
-                    \node[dot] (c) at (-.5,-1) {};
-                    \node[dot] (d) at (.5,-1) {};
-                    \node[dot] (e) at (1.5,-1) {};
-
-                    \draw (a) -- (b);
-                    \draw (a) -- (c);
-                    \draw (a) -- (d);
-                    \draw (a) -- (e);
+                \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                    \coordinate (root) {} [fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                        child {[fill]  circle (1.5pt)}
+                          child {[fill]  circle (1.5pt)}
+                        child {[fill]  circle (1.5pt)};
                 \end{tikzpicture}
             \end{figure}
         \end{enumerate}
@@ -670,5 +632,224 @@
     % Answer 12
     \begin{answer}
         \label{a12}
+        There are 20 nonisomorphic rooted trees with six vertices.
+        \\[12pt]
+        There is only 1 rooted tree with 6 vertices with a path of length 5.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                    child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                        child {[fill]  circle (1.5pt)
+                      }}}}};
+            \end{tikzpicture}
+        \end{figure}
+        With a path of length 4, there are 4 possibilities as we can attach the last leaf of the rooted tree with a path of length 5 to one of the top four vertices.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)}
+                  child {[fill]  circle (1.5pt)
+                    child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      }}}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)}
+                    child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      }}}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                    child {[fill]  circle (1.5pt)
+                    child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      }}}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                    child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      }}}};
+            \end{tikzpicture}
+        \end{figure}
+        With a path of length 3, there are 8 possibilities. 
+        \\[12pt]
+        We can attach 2 leaves to the first 3 vertices (not the last, as that would create a path of length 4).
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      }}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      }}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}  
+                child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      }}};
+            \end{tikzpicture}
+        \end{figure}
+            
+        We can also choose 2 places from 3 vertices to place the last 2 leaves, giving us another 3 possibilities. 
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                  child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      }}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                  child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      }}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      child {[fill]  circle (1.5pt)
+                      }}};
+            \end{tikzpicture}
+        \end{figure}
+        We can also attach the last two vertices in a path of length 2 to one of the top two vertices (we cannot attach to the bottom 2, as that would create a path greater than 3). 
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}}
+                  child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      }}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                  child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      }
+                      child {[fill]  circle (1.5pt)
+                      child {[fill]  circle (1.5pt)}
+                      }};
+                      ;
+            \end{tikzpicture}
+        \end{figure}
+        With a path of length 2, there are 6 possibilities.
+        \\[12pt]
+        We can place 3 leaves on the first 2 vertices (not the last, as that would create a path of length 3).
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}};
+            \end{tikzpicture}
+        \end{figure}
+        We can also attach 2 leaves to the root and 1 to the second vertex, or 1 to the root and 2 to the second vertex.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}};
+            \end{tikzpicture}
+        \end{figure}
+        We can also attach the last two vertices as a path of length 1 to the root, leaving the last leaf to be attached to a root at level 1 or to the root of the tree.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}}
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}};
+            \end{tikzpicture} \quad
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}}
+                child {[fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}};
+            \end{tikzpicture}
+        \end{figure}
+        With a path of length 1, there is 1 possibility.
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}[level distance=1.5cm, scale=0.8]
+                \coordinate (root) {} [fill]  circle (1.5pt)
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)}
+                child {[fill]  circle (1.5pt)};
+            \end{tikzpicture}
+        \end{figure}
+        Altogether, there are $1+4+8+6+1=20$ non-isomorphic trees with 6 vertices. 
     \end{answer}
 \end{document} 
